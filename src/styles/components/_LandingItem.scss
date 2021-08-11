@@ -1,0 +1,11 @@
+.landing-item {
+  display: flex;
+  flex-direction: column;
+
+  justify-content:space-between;
+
+
+  &__img{
+      display: block;
+  }
+}

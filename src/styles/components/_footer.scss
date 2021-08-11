@@ -1,0 +1,32 @@
+.footer {
+  background-color: $footer__bg;
+
+  display: grid;
+
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+
+  justify-items: center;
+  align-items: center;
+
+  &__logo {
+    background-color: $footer__bg;
+    width: 25%;
+    height: auto;
+    margin-top: 5px;
+    // overflow: hidden;
+  }
+
+  &__img {
+    display: block;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  &__copyright {
+    color: #f0f0f0;
+    font-size: 1.3rem;
+  }
+}
