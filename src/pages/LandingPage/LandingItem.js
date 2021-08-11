@@ -1,14 +1,16 @@
-import React from "react";
+import React, {useState } from "react";
 
-const LandingItem = () => {
+const LandingItem = ({ id, url, name, price }) => {
+  const [val, setVal] = useState({ id, url, name, price });
+
   return (
     <div className="landing-item">
       <div className="item-img-name">
-        <img src="https://picsum.photos/200/200" alt="random image" className="landing-item__img" />
-        <div className="landing-item__name">product name</div>
+        <img src={val.url} alt="random" className="landing-item__img" />
+        <div className="landing-item__name">{name}</div>
       </div>
 
-      <div className="landing-item__price">$1.149.99</div>
+      <div className="landing-item__price">{price}</div>
     </div>
   );
 };
