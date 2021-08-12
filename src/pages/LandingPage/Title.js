@@ -2,7 +2,7 @@ import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
-export default props => {
+const Title = props => {
   const [pause, setPause] = React.useState(false);
   const timer = React.useRef();
   const [sliderRef, slider] = useKeenSlider({
@@ -49,3 +49,5 @@ export default props => {
     </>
   );
 };
+
+export default Title;

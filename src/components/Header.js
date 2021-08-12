@@ -10,9 +10,9 @@ const Header = () => {
       <div className="navbar">
         <div className="logo"></div>
 
-        <form action="#" class="search">
-          <input type="text" class="search__input" placeholder="Search items" />
-          <button class="search__button">
+        <form action="#" className="search">
+          <input type="text" className="search__input" placeholder="Search items" />
+          <button className="search__button">
             <GoSearch />
           </button>
         </form>
