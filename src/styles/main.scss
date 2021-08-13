@@ -1,11 +1,13 @@
 @import "abstracts/variables";
 @import "abstracts/base";
 
+@import "layout/layout";
+
 @import "components/footer";
 @import "components/header";
 @import "components/slider";
-@import "components/LandingItem";
+@import "components/landingItem";
+@import "components/signInGoogle";
 
-@import "layout/layout";
-@import "pages/LandingPage";
-
+@import "pages/landingPage";
+@import "pages/signIn";

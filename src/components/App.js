@@ -1,14 +1,55 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import LandingPage from "../pages/LandingPage/LandingPage";
+import LandingPage from "../pages/LandingPage";
+import Electronics from "../pages/Electronics";
+import Homes from "../pages/Homes";
+import Books from "../pages/Books";
+import Fashion from "../pages/Fashion";
+import ShoppingCart from "../pages/ShoppingCart";
+import SignIn from "../pages/SignIn";
+import Search from "../pages/Search";
 
 const App = () => {
   return (
-    <div className='layout'>
-      <Header />
-      <LandingPage />
-      <Footer />
+    <div className="layout">
+      <Router>
+        <Route path="*" render={props => props.location.pathname !== "/sign" && <Header />} />
+
+        <Switch>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
+          <Route exact path="/search">
+            <Search />
+          </Route>
+          <Route exact path="/shopping">
+            <ShoppingCart />
+          </Route>
+          <Route exact path="/sign">
+            <SignIn />
+          </Route>
+          <Route exact path="/electronics">
+            <Electronics />
+          </Route>
+          <Route exact path="/homes">
+            <Homes />
+          </Route>
+          <Route exact path="/books">
+            <Books />
+          </Route>
+          <Route exact path="/fashion">
+            <Fashion />
+          </Route>
+
+          <Route exact path="*">
+            <div>make an error path</div>
+          </Route>
+        </Switch>
+
+        <Route path="*" render={props => props.location.pathname !== "/sign" && <Footer />} />
+      </Router>
     </div>
   );
 };

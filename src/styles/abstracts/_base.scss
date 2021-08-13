@@ -16,3 +16,10 @@ body {
     font-size: 1.6rem;
     color: $text__color;
 }
+
+a,
+a:link,
+a:visited{
+  text-decoration: none;
+  color: inherit;
+}

@@ -2,41 +2,68 @@ import React from "react";
 import { GoSearch } from "react-icons/go";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
-import MenuIcon from "@material-ui/icons/Menu";
+import HomeIcon from "@material-ui/icons/Home";
+import { Link, useHistory } from "react-router-dom";
+
+import Logo from "../assets/logo.jpg";
 
 const Header = () => {
+  const history = useHistory();
+
+  const handleSubmitForm = () => {
+    history.push("/search");
+  };
+
   return (
     <header className="header">
       <div className="navbar">
-        <div className="logo"></div>
+        <Link to="/">
+          {/* <div className="logo"></div> */}
 
-        <form action="#" className="search">
-          <input type="text" className="search__input" placeholder="Search items" />
-          <button className="search__button">
-            <GoSearch />
-          </button>
-        </form>
+          <img src={Logo} alt="logo" className="logo" />
+        </Link>
+
+          <form action="#" className="search" >
+            <input type="text" className="search__input" placeholder="Search items" />
+            <button className="search__button" onClick={()=>handleSubmitForm()}>
+              <GoSearch />
+            </button>
+          </form>
 
         <div className="signIn">
-          sing-in & <br /> registration
+          <Link to="/sign">
+            sing-in & <br /> registration
+          </Link>
         </div>
         <div className="cart">
-          <Badge badgeContent={4} color="primary">
-            <ShoppingCartIcon fontSize="large" />
-          </Badge>
+          <Link to="/shopping">
+            <Badge badgeContent={4} color="primary">
+              <ShoppingCartIcon fontSize="large" />
+            </Badge>
+          </Link>
         </div>
       </div>
       <div className="products">
         <div className="products__item">
-          <span className="products__menu">
+          {/* <span className="products__menu">
             <MenuIcon fontSize="large" />
-          </span>
-          All
+          </span> */}
+          <Link to="/">
+            <HomeIcon fontSize="large" />
+          </Link>
         </div>
-        <div className="products__item">Electronics </div>
-        <div className="products__item">Homes</div>
-        <div className="products__item">Books</div>
-        <div className="products__item">Fashion</div>
+        <div className="products__item">
+          <Link to="electronics">Electronics</Link>
+        </div>
+        <div className="homes">
+          <Link to="homes">Homes</Link>
+        </div>
+        <div className="products__item">
+          <Link to="books">Books</Link>
+        </div>
+        <div className="products__item">
+          <Link to="fashion">Fashion</Link>
+        </div>
       </div>
     </header>
   );
