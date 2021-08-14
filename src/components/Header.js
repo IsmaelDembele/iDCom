@@ -23,12 +23,12 @@ const Header = () => {
           <img src={Logo} alt="logo" className="logo" />
         </Link>
 
-          <form action="#" className="search" >
-            <input type="text" className="search__input" placeholder="Search items" />
-            <button className="search__button" onClick={()=>handleSubmitForm()}>
-              <GoSearch />
-            </button>
-          </form>
+        <form action="#" className="search">
+          <input type="text" className="search__input" placeholder="Search items" />
+          <button className="search__button" onClick={() => handleSubmitForm()}>
+            <GoSearch />
+          </button>
+        </form>
 
         <div className="signIn">
           <Link to="/sign">

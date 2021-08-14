@@ -1,17 +1,21 @@
 .sign-in {
   background-image: linear-gradient(to bottom, $primary, $secondary);
   min-height: 100vh;
-  height: 100%;
+  height: 55rem;
   display: flex;
   flex-direction: column;
+  color: $text__color-contact;
+  font-family: $font__secondary;
 
   justify-content: center;
   align-items: center;
+  // place-content: center;
 
   &__container {
     background-color: white;
     width: 30rem;
-    min-height: 40rem;
+    height: 40rem;
+    // heigt: ;
 
     display: flex;
     flex-direction: column;
@@ -27,7 +31,7 @@
     border-top-right-radius: 3px;
     display: block;
     width: 30rem;
-    height: 9rem;
+    height: 11.5rem;
     align-self: center;
     // margin-bottom: 2rem;
   }
@@ -42,13 +46,14 @@
     // justify-items: center;
     align-items: center;
 
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
 
     row-gap: 2rem;
     // padding-bottom: 1.5rem;
 
     .MuiInputLabel-root {
       font-size: 1.3rem;
+      // font-family: inherit;
     }
   }
 
@@ -57,13 +62,14 @@
     text-align: center;
     font-size: 2.5rem;
     font-weight: 500;
+    font-weight: 200;
   }
 
   &__email {
-    // width: 100%;
-    font-size: 2rem;
   }
   &__password {
+    font-family: inherit;
+
     // width: 100%;
   }
 
@@ -95,6 +101,7 @@
       transform: translate(-50%, -50%);
       z-index: 5;
       background-color: white;
+      line-height: 1;
       width: 3rem;
       text-align: center;
     }
@@ -108,5 +115,10 @@
         box-shadow: 0 1px 0 0 #e1e1e4;
       }
     }
+  }
+
+  &__create-account {
+    // color: #444;
+    font-size: 1.2rem !important;
   }
 }

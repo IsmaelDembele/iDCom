@@ -2,11 +2,14 @@ import React from "react";
 import Logo from "../../assets/logo.jpg";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
     <div className="sign-in">
-      <img src={Logo} alt="logo" className="sign-in__logo" />
+      <Link to="/">
+        <img src={Logo} alt="logo" className="sign-in__logo" />
+      </Link>
       <div className="sign-in__container">
         <form action="#" className="sign-in__form">
           <p className="sign-in__text">Sign-in to iDCom</p>
@@ -23,7 +26,6 @@ const SignIn = () => {
             size="small"
             className="sign-in__password"
             type="password"
-            // pattern="/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/"
           />
           <p className="sign-in__text-password">Forgot your password</p>
           <Button variant="contained" color="primary" className="sign-in__button">
@@ -69,6 +71,16 @@ const SignIn = () => {
             </svg>
           </div>
           <p class="btn-google__text">Sign in with Google</p>
+        </div>
+
+        <div className="sign-in__separator">
+          <div className="sign-in__separator__line">
+            <hr />
+          </div>
+        </div>
+
+        <div className="sign-in__create-account">
+          Don't have an account? <Link to="/" style={{color:'blue'}}>Create an account</Link>
         </div>
       </div>
     </div>
