@@ -18,8 +18,6 @@ const Header = () => {
     <header className="header">
       <div className="navbar">
         <Link to="/">
-          {/* <div className="logo"></div> */}
-
           <img src={Logo} alt="logo" className="logo" />
         </Link>
 
@@ -30,11 +28,14 @@ const Header = () => {
           </button>
         </form>
 
-        <div className="signIn">
-          <Link to="/sign">
-            sing-in & <br /> registration
-          </Link>
+        <div className="navbar__sign-in">
+          <Link to="/sign">sing in</Link>
         </div>
+
+        <div className="navbar__register">
+          <Link to="/register">register</Link>
+        </div>
+        
         <div className="cart">
           <Link to="/shopping">
             <Badge badgeContent={4} color="primary">

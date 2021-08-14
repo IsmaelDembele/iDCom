@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../assets/logo.jpg";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const passwordLength = 8;
 
-const SignIn = () => {
+const Register = () => {
+  const [fullnameChecker, setFullNameChecker] = useState(false);
   const [emailChecker, setEmailChecker] = useState(false);
   const [pwdChecker, setPwdChecker] = useState(false);
+  const [pwdConfChecker, setPwdConfChecker] = useState(false);
+
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
+  const [pwdConf, setPwdConf] = useState("");
 
+  const handleChangeFullName = e => {
+    const value = e.target.value;
+    const test = value.length > 3;
+
+    setFullNameChecker(test);
+    setFullName(value);
+  };
   const handleChangeEmail = e => {
     const value = e.target.value;
     const test = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value);
@@ -25,20 +36,37 @@ const SignIn = () => {
     setPwdChecker(test);
     setPwd(value);
   };
+  const handleChangePwdConf = e => {
+    const value = e.target.value;
+    const test = value === pwd;
+    setPwdConfChecker(test);
+    setPwdConf(value);
+  };
 
   return (
-    <div className="sign-in">
+    <div className="register">
       <Link to="/">
-        <img src={Logo} alt="logo" className="sign-in__logo" />
+        <img src={Logo} alt="logo" className="register__logo" />
       </Link>
-      <div className="sign-in__container">
-        <form action="#" className="sign-in__form">
-          <p className="sign-in__text">Sign-in to iDCom</p>
+
+      <div className="register__container">
+        <form action="#" className="register__form">
+          <p className="register__text">Create an Account</p>
+          <TextField
+            label="Full name"
+            variant="outlined"
+            size="small"
+            className="register__name"
+            type="text"
+            onChange={e => handleChangeFullName(e)}
+            value={fullName}
+            error={fullName !== "" && !fullnameChecker}
+          />
           <TextField
             label="Email"
             variant="outlined"
             size="small"
-            className="sign-in__email"
+            className="register__email"
             type="email"
             onChange={e => handleChangeEmail(e)}
             value={email}
@@ -48,20 +76,32 @@ const SignIn = () => {
             label="Password"
             variant="outlined"
             size="small"
-            className="sign-in__password"
+            className="register__password"
             type="password"
             onChange={e => handleChangePwd(e)}
             value={pwd}
             error={pwd !== "" && !pwdChecker}
           />
-          <p className="sign-in__text-password">Forgot your password</p>
-          <Button variant="contained" color="primary" className="sign-in__button">
-            Sign in
+
+          <TextField
+            label="Confirm password"
+            variant="outlined"
+            size="small"
+            className="register__password"
+            type="password"
+            onChange={e => handleChangePwdConf(e)}
+            value={pwdConf}
+            error={pwdConf !== "" && !pwdConfChecker}
+          />
+          <p className="register__text-password">Passwords must be at least 8 characters.</p>
+
+          <Button variant="contained" color="primary" className="register__button">
+            Create your account
           </Button>
         </form>
-        <div className="sign-in__separator">
-          <div className="sign-in__separator__text">or</div>
-          <div className="sign-in__separator__line">
+        <div className="register__separator">
+          <div className="register__separator__text">or</div>
+          <div className="register__separator__line">
             <hr />
           </div>
         </div>
@@ -97,24 +137,21 @@ const SignIn = () => {
               </g>
             </svg>
           </div>
-          <p className="btn-google__text">Sign in with Google</p>
+          <p className="btn-google__text">Sign up with Google</p>
         </div>
 
-        <div className="sign-in__separator">
-          <div className="sign-in__separator__line">
+        <div className="register__separator">
+          <div className="register__separator__line">
             <hr />
           </div>
         </div>
 
-        <div className="sign-in__create-account">
-          Don't have an account?
-          <Link to="/register" style={{ color: "blue" }}>
-            Create an account
-          </Link>
+        <div className="register__create-account">
+          By creating an account, you agree to iDCom's Conditions of Use and Privacy Notice.
         </div>
       </div>
     </div>
   );
 };
 
-export default SignIn;
+export default Register;

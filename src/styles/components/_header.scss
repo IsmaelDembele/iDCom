@@ -8,10 +8,10 @@
   color: white;
   font-weight: 500;
   display: grid;
+  // height: 100%;
+  grid-template-columns: 18% 1fr 5% 5% 10%;
 
-  grid-template-columns: 18% 1fr 10% 10%;
-
-  column-gap: 10rem;
+  column-gap: 9rem;
   justify-items: center;
   align-items: center;
 
@@ -21,7 +21,7 @@
   .logo {
     display: block;
     width: 17rem;
-    height: 100%;
+    // height: 100%;
   }
   .search {
     display: flex;
@@ -63,7 +63,7 @@
     }
   }
 
-  .signIn {
+  &__sign-in, &__register {
     text-align: center;
     text-transform: capitalize;
     font-size: 1.1rem;
@@ -71,6 +71,7 @@
 
     cursor: pointer;
   }
+
   .cart {
     cursor: pointer;
 
