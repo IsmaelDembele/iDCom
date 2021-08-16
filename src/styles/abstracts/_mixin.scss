@@ -1,0 +1,9 @@
+@mixin header-item-hover {
+  padding: 1rem 1rem;
+  border: 0.1rem solid transparent;
+  transition: all 1s;
+
+  &:hover {
+    border: 0.1rem solid white;
+  }
+}

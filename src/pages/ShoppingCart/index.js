@@ -1,7 +1,8 @@
 import React from "react";
+import Cart from './Cart';
 
 const ShoppingCart = () => {
-  return <div>Shopping Cart</div>;
+  return <Cart/>;
 };
 
 export default ShoppingCart;

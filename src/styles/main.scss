@@ -1,4 +1,5 @@
 @import "abstracts/variables";
+@import "abstracts/mixin";
 @import "abstracts/base";
 
 @import "layout/layout";
@@ -8,7 +9,9 @@
 @import "components/slider";
 @import "components/landingItem";
 @import "components/signInGoogle";
+@import "components/btn-regular";
 
 @import "pages/landingPage";
 @import "pages/signIn";
 @import "pages/register";
+@import "pages/shoppingCart";

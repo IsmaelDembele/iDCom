@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GoSearch } from "react-icons/go";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
@@ -7,8 +7,19 @@ import { Link, useHistory } from "react-router-dom";
 
 import Logo from "../assets/logo.jpg";
 
+import { ItemNumberContect } from "../Helper/context";
+import { numeral_totalQuantity } from "../Helper/fn_numeral";
+
 const Header = () => {
+  const [cartItemNumber, setCartItemNumer] = useState(0);
+
+  const { myCart } = useContext(ItemNumberContect);
   const history = useHistory();
+
+  useEffect(() => {
+    const _itemNumber = numeral_totalQuantity(myCart);
+    setCartItemNumer(_itemNumber);
+  }, [myCart]);
 
   const handleSubmitForm = () => {
     history.push("/search");
@@ -35,10 +46,10 @@ const Header = () => {
         <div className="navbar__register">
           <Link to="/register">register</Link>
         </div>
-        
+
         <div className="cart">
           <Link to="/shopping">
-            <Badge badgeContent={4} color="primary">
+            <Badge badgeContent={cartItemNumber} color="primary">
               <ShoppingCartIcon fontSize="large" />
             </Badge>
           </Link>
@@ -46,9 +57,6 @@ const Header = () => {
       </div>
       <div className="products">
         <div className="products__item">
-          {/* <span className="products__menu">
-            <MenuIcon fontSize="large" />
-          </span> */}
           <Link to="/">
             <HomeIcon fontSize="large" />
           </Link>
@@ -56,7 +64,7 @@ const Header = () => {
         <div className="products__item">
           <Link to="electronics">Electronics</Link>
         </div>
-        <div className="homes">
+        <div className="products__item">
           <Link to="homes">Homes</Link>
         </div>
         <div className="products__item">

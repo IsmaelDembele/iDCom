@@ -9,12 +9,10 @@
 
   justify-content: center;
   align-items: center;
-  // place-content: center;
 
   &__logo {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    display: block;
     width: 30rem;
     height: 11.5rem;
     align-self: center;
@@ -35,26 +33,18 @@
 
   &__form {
     height: 50%;
-
     display: grid;
     grid-template-rows: repeat(3, 1fr) 5px 1fr;
-
     align-items: center;
-
     margin-bottom: 2.5rem;
-
     row-gap: 2rem;
-
     .MuiInputLabel-root {
       font-size: 1.3rem;
       background-color: white;
-
-      // text-transform: capitalize;
     }
   }
 
   &__text {
-    // width: 100%;
     text-align: center;
     font-size: 2.5rem;
     font-weight: 500;
@@ -65,33 +55,20 @@
   }
   &__password {
     font-family: inherit;
-
   }
 
   &__text-password {
     font-size: 1rem;
     font-weight: 300;
     color: blue;
-    // margin-top: -2rem;
-  }
-
-  &__button {
-    .MuiButton-label {
-      font-weight: 400;
-      font-size: 1.5rem;
-      text-transform: capitalize;
-    }
   }
 
   &__separator {
-    // display: block;
-    // background-color: yellow;
     height: 5rem;
     position: relative;
 
     &__text {
       position: relative;
-      // display: block;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -105,16 +82,10 @@
       width: 100%;
       position: absolute;
       top: 50%;
-      hr {
-        height: 1px;
-        border: none;
-        box-shadow: 0 1px 0 0 #e1e1e4;
-      }
     }
   }
 
   &__create-account {
-    // color: #444;
     font-size: 1.2rem !important;
   }
 }

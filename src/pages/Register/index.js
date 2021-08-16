@@ -95,7 +95,7 @@ const Register = () => {
           />
           <p className="register__text-password">Passwords must be at least 8 characters.</p>
 
-          <Button variant="contained" color="primary" className="register__button">
+          <Button variant="contained" color="primary" className="btn-regular">
             Create your account
           </Button>
         </form>

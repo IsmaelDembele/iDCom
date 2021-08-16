@@ -55,7 +55,7 @@ const SignIn = () => {
             error={pwd !== "" && !pwdChecker}
           />
           <p className="sign-in__text-password">Forgot your password</p>
-          <Button variant="contained" color="primary" className="sign-in__button">
+          <Button variant="contained" color="primary" className="btn-regular">
             Sign in
           </Button>
         </form>
