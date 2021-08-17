@@ -1,7 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
 
-// export const ui = uuidv4();
-
 export const dataE = [
   { id: uuidv4(), title: "electronics" },
   {
@@ -48,7 +46,7 @@ export const dataH = [
     id: uuidv4(),
     url: "https://picsum.photos/200/200",
     name: "Hagstone",
-    price: null,
+    price: "$12.45",
   },
   {
     id: uuidv4(),

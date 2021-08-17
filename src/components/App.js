@@ -13,7 +13,7 @@ import Register from "../pages/Register";
 import Search from "../pages/Search";
 
 import { ItemNumberContect } from "../Helper/context";
-import { cartData } from "../pages/ShoppingCart/cartData";
+import { cartData } from "../data/cartData";
 
 const App = () => {
   const [myCart, setMyCart] = useState(cartData);
