@@ -26,6 +26,18 @@ export const dataE = [
     name: "Christauffour",
     price: "$7722.51",
   },
+  {
+    id: uuidv4(),
+    url: "https://picsum.photos/200/200",
+    name: "Christauffour",
+    price: "$7722.51",
+  },
+  {
+    id: uuidv4(),
+    url: "https://picsum.photos/200/200",
+    name: "Christauffour",
+    price: "$7722.51",
+  },
 ];
 
 export const dataH = [
@@ -35,6 +47,18 @@ export const dataH = [
     url: "https://picsum.photos/200/200",
     name: "Risborough",
     price: "$8175.57",
+  },
+  {
+    id: uuidv4(),
+    url: "https://picsum.photos/200/200",
+    name: "Dudill",
+    price: "$9893.26",
+  },
+  {
+    id: uuidv4(),
+    url: "https://picsum.photos/200/200",
+    name: "Dudill",
+    price: "$9893.26",
   },
   {
     id: uuidv4(),
@@ -73,6 +97,18 @@ export const dataB = [
   {
     id: uuidv4(),
     url: "https://picsum.photos/200/200",
+    name: "Poundesford",
+    price: "$5253.53",
+  },
+  {
+    id: uuidv4(),
+    url: "https://picsum.photos/200/200",
+    name: "Poundesford",
+    price: "$5253.53",
+  },
+  {
+    id: uuidv4(),
+    url: "https://picsum.photos/200/200",
     name: "Pestor",
     price: "$8688.13",
   },
@@ -91,6 +127,18 @@ export const dataF = [
     url: "https://picsum.photos/200/200",
     name: "Syddie",
     price: "$4668.63",
+  },
+  {
+    id: uuidv4(),
+    url: "https://picsum.photos/200/200",
+    name: "Isack",
+    price: "$212.16",
+  },
+  {
+    id: uuidv4(),
+    url: "https://picsum.photos/200/200",
+    name: "Isack",
+    price: "$212.16",
   },
   {
     id: uuidv4(),

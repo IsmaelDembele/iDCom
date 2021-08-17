@@ -3,14 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import LandingPage from "../pages/LandingPage";
-import Electronics from "../pages/Electronics";
-import Homes from "../pages/Homes";
-import Books from "../pages/Books";
-import Fashion from "../pages/Fashion";
+import Products from "../pages/Products";
 import ShoppingCart from "../pages/ShoppingCart";
 import SignIn from "../pages/SignIn";
 import Register from "../pages/Register";
-import Search from "../pages/Search";
 
 import { ItemNumberContect } from "../Helper/context";
 import { cartData } from "../data/cartData";
@@ -34,9 +30,6 @@ const App = () => {
             <Route exact path="/">
               <LandingPage />
             </Route>
-            <Route exact path="/search">
-              <Search />
-            </Route>
             <Route exact path="/shopping">
               <ShoppingCart />
             </Route>
@@ -46,21 +39,13 @@ const App = () => {
             <Route exact path="/register">
               <Register />
             </Route>
-            <Route exact path="/electronics">
-              <Electronics />
-            </Route>
-            <Route exact path="/homes">
-              <Homes />
-            </Route>
-            <Route exact path="/books">
-              <Books />
-            </Route>
-            <Route exact path="/fashion">
-              <Fashion />
+            {/* products id */}
+            <Route exact path="/products/:id">
+              <Products />
             </Route>
 
             <Route exact path="*">
-              <div>make an error path</div>
+              <div id="error-page">404 Page not found</div>
             </Route>
           </Switch>
 

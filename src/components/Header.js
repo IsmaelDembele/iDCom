@@ -12,6 +12,7 @@ import { numeral_totalQuantity } from "../Helper/fn_numeral";
 
 const Header = () => {
   const [cartItemNumber, setCartItemNumer] = useState(0);
+  const [searchItem, setSearchItem] = useState("");
 
   const { myCart } = useContext(ItemNumberContect);
   const history = useHistory();
@@ -22,7 +23,12 @@ const Header = () => {
   }, [myCart]);
 
   const handleSubmitForm = () => {
-    history.push("/search");
+    searchItem !== "" && history.push(`/products/${searchItem}`);
+  };
+  const handleChange = e => {
+    const _item = e.target.value;
+    console.log(_item);
+    setSearchItem(_item);
   };
 
   return (
@@ -33,8 +39,14 @@ const Header = () => {
         </Link>
 
         <form action="#" className="search">
-          <input type="text" className="search__input" placeholder="Search items" />
-          <button className="search__button" onClick={() => handleSubmitForm()}>
+          <input
+            type="text"
+            className="search__input"
+            value={searchItem}
+            placeholder="Search for products"
+            onChange={e => handleChange(e)}
+          />
+          <button className="search__button" onClick={e => handleSubmitForm(e)}>
             <GoSearch />
           </button>
         </form>
@@ -62,16 +74,16 @@ const Header = () => {
           </Link>
         </div>
         <div className="products__item">
-          <Link to="electronics">Electronics</Link>
+          <Link to="/products/electronics">Electronics</Link>
         </div>
         <div className="products__item">
-          <Link to="homes">Homes</Link>
+          <Link to="/products/homes">Homes</Link>
         </div>
         <div className="products__item">
-          <Link to="books">Books</Link>
+          <Link to="/products/books">Books</Link>
         </div>
         <div className="products__item">
-          <Link to="fashion">Fashion</Link>
+          <Link to="/products/fashion">Fashion</Link>
         </div>
       </div>
     </header>

@@ -106,5 +106,10 @@
     &:hover {
       border: 1px solid white;
     }
+
+    &:first-child{
+      margin-top: 1%;
+      // margin-bottom: au;
+    }
   }
 }

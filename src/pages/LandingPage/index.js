@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "./Title";
-import Body from "./Body";
+import LandingPageContent from "./LandingPageContent";
 
 const LandingPage = () => {
   return (
@@ -8,7 +8,7 @@ const LandingPage = () => {
       <div className="title">
         <Title />
       </div>
-        <Body />
+        <LandingPageContent />
     </section>
   );
 };
