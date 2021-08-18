@@ -29,4 +29,6 @@ export const cartData = [
     price: "$2173.20",
     qty: 3,
   },
+
+
 ];

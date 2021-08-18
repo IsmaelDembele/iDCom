@@ -7,7 +7,7 @@ import {
   numaral_totalPrice,
   number_to_money,
   numeral_totalQuantity,
-} from "../../Helper/fn_numeral";
+} from "../../Helper/function";
 
 const Cart = () => {
   const [total, setTotal] = useState(0);

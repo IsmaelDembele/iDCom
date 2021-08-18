@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import LandingPage from "../pages/LandingPage";
 import Products from "../pages/Products";
+import ItemReview from "../pages/ItemReview";
 import ShoppingCart from "../pages/ShoppingCart";
 import SignIn from "../pages/SignIn";
 import Register from "../pages/Register";
@@ -39,9 +40,12 @@ const App = () => {
             <Route exact path="/register">
               <Register />
             </Route>
-            {/* products id */}
+
             <Route exact path="/products/:id">
               <Products />
+            </Route>
+            <Route exact path="/itemreview/:id">
+              <ItemReview />
             </Route>
 
             <Route exact path="*">

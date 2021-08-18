@@ -8,7 +8,7 @@ import { Link, useHistory } from "react-router-dom";
 import Logo from "../assets/logo.jpg";
 
 import { ItemNumberContect } from "../Helper/context";
-import { numeral_totalQuantity } from "../Helper/fn_numeral";
+import { numeral_totalQuantity } from "../Helper/function";
 
 const Header = () => {
   const [cartItemNumber, setCartItemNumer] = useState(0);

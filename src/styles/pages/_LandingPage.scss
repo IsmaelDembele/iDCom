@@ -41,7 +41,7 @@
   }
 
   .body {
-    background-image: linear-gradient(to bottom, #bfdbfe, #1e3a8a);
+    background-image: linear-gradient(to bottom, #fff, #bfdbfe, #1e3a8a);
     margin-bottom: 15rem;
     &__product {
       margin-bottom: 2rem;
@@ -80,7 +80,7 @@
     &__product-item {
       display: flex;
       justify-content: center;
-      // align-items: center;
+      cursor: pointer;
       background-color: white;
       width: 25rem;
       height: 35rem;

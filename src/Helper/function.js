@@ -1,5 +1,29 @@
 import numeral from "numeral";
 
+export const addToCart = (item,myCart,setMyCart,history) => {
+  let find = false;
+  let newCart = myCart;
+
+  console.log(item);
+  //if the element is already inside, then we augment the quantity
+  for (const el of myCart) {
+    if (el.id === item.id) {
+      find = true;
+      el.qty++;
+      break;
+    }
+  }
+  //if the element is not inside then we add it inside and set the quantity to one
+  if (!find) {
+    newCart.push({ ...item, qty: 1 });
+    console.log(newCart);
+    setMyCart(newCart);
+    find = true;
+  }
+
+  find && history.push('/shopping');
+};
+
 export const numaral_totalPrice = myArray => {
   let myTotal = 0;
   myArray.forEach(item => {

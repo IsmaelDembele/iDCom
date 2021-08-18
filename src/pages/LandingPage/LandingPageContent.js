@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import LandingItem from "./LandingItem";
 import { dataE, dataH, dataB, dataF } from "../../data/data";
 import { v4 as uuidv4 } from "uuid";
+import { useHistory } from "react-router-dom";
 
 const Body = () => {
   const nbElement = 5;
   const [myData] = useState([dataE, dataH, dataB, dataF]);
+  const history = useHistory();
+
+  const handleClick = item => {
+    history.push({ pathname: `/itemReview/${item.id}`, item });
+  };
+
   return (
     <div className="body">
       {myData.map((data, index) => {
         return (
           <div className="body__product" key={uuidv4()}>
-            {data.slice(0,nbElement).map((item, index2) => {
+            {data.slice(0, nbElement).map((item, index2) => {
               return (
                 <React.Fragment key={uuidv4()}>
                   {index2 === 0 && (
@@ -21,7 +28,7 @@ const Body = () => {
                   )}
                   {index2 !== 0 && (
                     <div className="body__product-list">
-                      <div className="body__product-item">
+                      <div className="body__product-item" onClick={() => handleClick(item)}>
                         <LandingItem key={item.id} {...item} />
                       </div>
                     </div>
