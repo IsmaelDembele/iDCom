@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Header from "./Header";
+import Header from "./Header/Header";
 import Footer from "./Footer";
 import LandingPage from "../pages/LandingPage";
 import Products from "../pages/Products";

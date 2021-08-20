@@ -1,0 +1,7 @@
+name: "The Art of War",
+
+description: "The Art of War : Sun-Tzu is a landmark translation of the Chinese classic that is without a doubt one of the most important books of all time. Popularly known as The Art of War, Sun-Tzu is one of the leading books on strategic thinking ever written. While other books on strategy, wisdom, and philosophy come and go, both leaders and gentle contemplators alike have embraced the writings of Sun-tzu."
+
+price: "$14.49"
+
+Author: "Sun Tzu"

@@ -5,7 +5,7 @@ const LandingItem = ({ id, url, name, price }) => {
 
   return (
     <div  className="landing-item" key={id}>
-      <div  className="item-img-name">
+      <div  className="landing-item__img-name">
         <img src={url} alt="random" className="landing-item__img"  />
         <div  className="landing-item__name">{name}</div>
       </div>

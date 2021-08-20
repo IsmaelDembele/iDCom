@@ -1,0 +1,9 @@
+name : "adidas Men's CF Lite Racer Byd" 
+
+description: " adidas Men's CF Lite Racer Byd
+100% Other fibers
+Imported
+Synthetic sole
+Shaft measures approximately 6-12 inches from arch "
+
+price : "54.97"

@@ -1,0 +1,6 @@
+name : "Apple MacBook Pro 16 inch"
+
+description: Apple MacBook Pro 16" with Touch Bar, 9th-Gen 8-Core Intel i9 2.3GHz, 16GB RAM, 1TB SSD, AMD Radeon Pro 5500M 8GB, Space Gray, Late 2019 Z0Y0005J7 / Z0Y00006M 
+
+price: "$2779.85"
+

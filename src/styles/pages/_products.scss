@@ -2,18 +2,15 @@
   min-height: 90vh;
 
   &__title {
-    // width: 100%;
     height: 10rem;
     padding: 4rem 10rem;
     box-shadow: $shadow;
     font-size: 2rem;
     text-transform: uppercase;
-
-    // font-weight: 300;
   }
 
   &__list-item {
-    background-color: #f5f5f5;
+    // background-color: #f5f5f5;
   }
 
   ///items
@@ -26,15 +23,18 @@
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: stretch;
-    // gap: 2rem 2rem;
     box-shadow: $shadow;
   }
 
   &__item-picture {
-    // background-color: bisque;
+    img {
+      cursor: pointer;
+      height: 20rem;
+      width: auto;
+    }
 
-    cursor: pointer;
     p {
+      cursor: pointer;
       color: $primary;
       margin: 2rem;
       text-transform: capitalize;
@@ -43,16 +43,9 @@
   }
 
   &__item-name {
-    // background-color: bisque;
-
-    cursor: pointer;
   }
   &__item-price {
-    // background-color: bisque;
-    // align-self: stretch;
     width: 30rem;
-    // padding: ;
-    cursor: pointer;
     font-size: 2.5rem;
     font-weight: 600;
 
@@ -60,8 +53,6 @@
       color: $text__color-price;
       text-align: center;
       margin-bottom: 2.5rem;
-
-      // margin-bottom: auto;
     }
 
     .btn-regular {

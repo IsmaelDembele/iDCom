@@ -1,14 +1,17 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams, useLocation, useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
 import { ItemNumberContect } from "../../Helper/context";
 import { addToCart } from "../../Helper/function";
 
 const ItemReview = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
   const location = useLocation();
-  //to avoid reload error: location.item become null when the user inadvertantly reload the bage which cause a bug
+  /**
+   * o avoid reload error: location.item become null when the user
+   * inadvertantly reload the bage which cause a bug.
+   */
   const item = location.item ? location.item : JSON.parse(localStorage.getItem("item"));
   const history = useHistory();
   const { myCart, setMyCart } = useContext(ItemNumberContect);

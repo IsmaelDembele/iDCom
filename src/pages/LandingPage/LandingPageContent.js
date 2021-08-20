@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import LandingItem from "./LandingItem";
-import { dataE, dataH, dataB, dataF } from "../../data/data";
+import { data } from "../../data/data";
 import { v4 as uuidv4 } from "uuid";
 import { useHistory } from "react-router-dom";
 
 const Body = () => {
-  const nbElement = 5;
-  const [myData] = useState([dataE, dataH, dataB, dataF]);
+  const nbElement = 4;
+  const [myData] = useState(data);
   const history = useHistory();
+  const [listTitle] = useState(["electronics", "homes", "books", "fashion"]);
 
   const handleClick = item => {
     history.push({ pathname: `/itemReview/${item.id}`, item });
@@ -15,27 +16,25 @@ const Body = () => {
 
   return (
     <div className="body">
-      {myData.map((data, index) => {
+      {listTitle.map(title => {
         return (
           <div className="body__product" key={uuidv4()}>
-            {data.slice(0, nbElement).map((item, index2) => {
-              return (
-                <React.Fragment key={uuidv4()}>
-                  {index2 === 0 && (
-                    <div key={data[index2].id} className="body__product-title">
-                      {data[index2].title}
+            <div className="body__product-title">{title}</div>
+
+            <div className="body__product-list">
+              {myData
+                .filter(item => {
+                  return item.type === title;
+                })
+                .slice(0, nbElement)
+                .map(item => {
+                  return (
+                    <div className="body__product-item" key={uuidv4()} onClick={() => handleClick(item)}>
+                      <LandingItem  {...item} />
                     </div>
-                  )}
-                  {index2 !== 0 && (
-                    <div className="body__product-list">
-                      <div className="body__product-item" onClick={() => handleClick(item)}>
-                        <LandingItem key={item.id} {...item} />
-                      </div>
-                    </div>
-                  )}
-                </React.Fragment>
-              );
-            })}
+                  );
+                })}
+            </div>
           </div>
         );
       })}

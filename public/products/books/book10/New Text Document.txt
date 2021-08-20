@@ -1,0 +1,7 @@
+name: "Extraterrestrial: The First Sign of Intelligent Life Beyond Earth"
+
+description: "Extraterrestrial: The First Sign of Intelligent Life Beyond Earth: Harvard’s top astronomer lays out his controversial theory that our solar system was recently visited by advanced alien technology from a distant star."
+
+price: "$16.51"
+
+Author "Avi Loeb",

@@ -1,0 +1,7 @@
+name: "The Psychology of Money"
+
+description: "The Psychology of Money: Timeless Lessons on Wealth, Doing well with money isn’t necessarily about what you know. It’s about how you behave. And behavior is hard to teach, even to really smart people. "
+
+price: "$16.99"
+
+author: "Morgan Housel"

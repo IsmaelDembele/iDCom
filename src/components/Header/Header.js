@@ -1,35 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
-import { GoSearch } from "react-icons/go";
+import { Link } from "react-router-dom";
+
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
 import HomeIcon from "@material-ui/icons/Home";
-import { Link, useHistory } from "react-router-dom";
 
-import Logo from "../assets/logo.jpg";
-
-import { ItemNumberContect } from "../Helper/context";
-import { numeral_totalQuantity } from "../Helper/function";
+import SearchInput from "./SearchInput";
+import Logo from "../../assets/logo.jpg";
+import { ItemNumberContect } from "../../Helper/context";
+import { numeral_totalQuantity } from "../../Helper/function";
 
 const Header = () => {
   const [cartItemNumber, setCartItemNumer] = useState(0);
-  const [searchItem, setSearchItem] = useState("");
 
   const { myCart } = useContext(ItemNumberContect);
-  const history = useHistory();
 
   useEffect(() => {
     const _itemNumber = numeral_totalQuantity(myCart);
     setCartItemNumer(_itemNumber);
   }, [myCart]);
 
-  const handleSubmitForm = () => {
-    searchItem !== "" && history.push(`/products/${searchItem}`);
-  };
-  const handleChange = e => {
-    const _item = e.target.value;
-    console.log(_item);
-    setSearchItem(_item);
-  };
+
 
   return (
     <header className="header">
@@ -38,7 +29,8 @@ const Header = () => {
           <img src={Logo} alt="logo" className="logo" />
         </Link>
 
-        <form action="#" className="search">
+        <SearchInput />
+        {/* <form action="#" className="search">
           <input
             type="text"
             className="search__input"
@@ -49,7 +41,7 @@ const Header = () => {
           <button className="search__button" onClick={e => handleSubmitForm(e)}>
             <GoSearch />
           </button>
-        </form>
+        </form> */}
 
         <div className="navbar__sign-in">
           <Link to="/sign">sing in</Link>
@@ -67,24 +59,26 @@ const Header = () => {
           </Link>
         </div>
       </div>
+
+
       <div className="products">
-        <div className="products__item">
-          <Link to="/">
+        <Link to="/">
+          <div className="products__item products__first">
             <HomeIcon fontSize="large" />
-          </Link>
-        </div>
-        <div className="products__item">
-          <Link to="/products/electronics">Electronics</Link>
-        </div>
-        <div className="products__item">
-          <Link to="/products/homes">Homes</Link>
-        </div>
-        <div className="products__item">
-          <Link to="/products/books">Books</Link>
-        </div>
-        <div className="products__item">
-          <Link to="/products/fashion">Fashion</Link>
-        </div>
+          </div>
+        </Link>
+        <Link to="/products/electronics">
+          <div className="products__item">Electronics</div>
+        </Link>
+        <Link to="/products/homes">
+          <div className="products__item">Homes</div>
+        </Link>
+        <Link to="/products/books">
+          <div className="products__item">Books</div>
+        </Link>
+        <Link to="/products/fashion">
+          <div className="products__item">Fashion</div>
+        </Link>
       </div>
     </header>
   );

@@ -1,0 +1,13 @@
+name : "Kenneth Cole REACTION Men's Techni-Cole Stretch Slim Fit Suit Separate (Blazer, Pant, and Vest) "
+
+Description : "Kenneth Cole REACTION Men's Techni-Cole Stretch Slim Fit Suit Separate (Blazer, Pant, and Vest) : 
+    87% Polyester, 12% Rayon, 1% Spandex
+    Imported
+    Button closure
+    Dry Clean Only
+    Blazer, pant, and vest sold separately
+    Stretch fabric. Fully lined interior
+    Double vented
+"
+
+price: "73.31"

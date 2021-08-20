@@ -1,0 +1,7 @@
+name: "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future "
+
+description: "In the spirit of Steve Jobs and Moneyball, Elon Musk is both an illuminating and authorized look at the extraordinary life of one of Silicon Valley's most exciting, unpredictable, and ambitious entrepreneurs - a real-life Tony Stark - and a fascinating exploration of the renewal of American invention and its new makers. "
+
+price: "$16.99"
+
+author: "Ashlee Vance"

@@ -1,0 +1,6 @@
+name: asus TUF Gaming
+
+description: "ASUS TUF Gaming F17 Gaming Laptop, 17.3” 144Hz Full HD IPS-Type, Intel Core i7-11800H Processor,
+			 GeForce RTX 3050 Ti, 16GB DDR4, 512GB PCIe SSD, Gigabit Wi-Fi 6, Windows 10 Home, TUF706HE-DS74" 
+			 
+price: $1599.99
