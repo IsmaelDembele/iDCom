@@ -4,6 +4,7 @@ import Header from "./Header/Header";
 import Footer from "./Footer";
 import LandingPage from "../pages/LandingPage";
 import Products from "../pages/Products";
+import SearchPage from "../pages/SearchPage";
 import ItemReview from "../pages/ItemReview";
 import ShoppingCart from "../pages/ShoppingCart";
 import SignIn from "../pages/SignIn";
@@ -11,6 +12,7 @@ import Register from "../pages/Register";
 
 import { ItemNumberContect } from "../Helper/context";
 import { cartData } from "../data/cartData";
+import { Search } from "@material-ui/icons";
 
 const App = () => {
   const [myCart, setMyCart] = useState([]);
@@ -41,6 +43,9 @@ const App = () => {
               <Register />
             </Route>
 
+            <Route exact path="/search/:id">
+              <SearchPage />
+            </Route>
             <Route exact path="/products/:id">
               <Products />
             </Route>

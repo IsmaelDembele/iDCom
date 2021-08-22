@@ -20,6 +20,10 @@ const ItemReview = () => {
 
   useEffect(() => {
     localStorage.setItem("item", JSON.stringify(item));
+
+    setDisplayImage(item.url);
+    setIsActive(true);
+
   }, [item]);
 
   const handleMousehover = (img, bool) => {

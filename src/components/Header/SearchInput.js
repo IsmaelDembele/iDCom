@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
 import { data } from "../../data/data";
 
@@ -8,17 +8,22 @@ const SearchInput = () => {
   const [searchItem, setSearchItem] = useState("");
   const [searchData, setSearchData] = useState([]);
 
-  const handleSubmitForm = () => {
-    searchItem !== "" && history.push(`/products/${searchItem}`);
+  const handleSubmitForm = e => {
+    e.preventDefault();
+    // console.log(handleSubmitForm, searchData);
+    searchItem !== "" &&
+      searchData.length > 0 &&
+      history.push({ pathname: `/search/${searchItem}`, searchData });
+    clearSearchData();
   };
 
   const handleChange = e => {
     const _item = e.target.value;
     setSearchItem(_item);
 
-    const newFilter = data.slice(1).filter(value => {
-        // console.log(value.name);
-      return value.name.toLowerCase().includes(_item.toLowerCase());
+    const newFilter = data.filter(value => {
+      // console.log(value.name);
+      return value.description.toLowerCase().includes(_item.toLowerCase());
     });
 
     if (_item === "") {
@@ -28,10 +33,15 @@ const SearchInput = () => {
     }
   };
 
-  // const handleClearSearchData = () => {
-  //   setSearchData([]);
-  //   console.log("test");
-  // };
+  const handleClick = (id, item) => {
+    history.push({ pathname: `/itemReview/${id}`, item });
+    clearSearchData();
+  };
+
+  const clearSearchData = () => {
+    setSearchItem("");
+    setSearchData([]);
+  };
 
   return (
     <div className="search-container">
@@ -50,11 +60,7 @@ const SearchInput = () => {
       {searchData.length !== 0 && (
         <div className="searchResult">
           {searchData.map((el, index) => {
-            return (
-              <Link key={index} to="#">
-                <p>{el.name}</p>
-              </Link>
-            );
+            return <p onClick={() => handleClick(el.id, el)}>{el.name}</p>;
           })}
         </div>
       )}

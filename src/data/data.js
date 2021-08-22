@@ -302,7 +302,7 @@ export const data = [
     name: "The Prince",
     author: "Niccolo Machiavelli",
     price: "$6.85",
-    desctiption:
+    description:
       "The Prince : A new, beautifully laid-out, easy-to-read pocket edition of Niccolò Machiavelli's The Prince, based on Luigi Ricci's highly-readable 1921 translation.  The Prince is one of the most influential and important early works of modern philosophy and political theory, essential reading for anyone who wants to understand the politics of power, with applicable lessons and cautionary tales for life, government, business, international and foreign affairs, and management. ",
   },
   {
