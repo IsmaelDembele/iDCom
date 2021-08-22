@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
-import { data } from "../../data/data";
+import { myContext } from "../../Helper/context";
 
 const SearchInput = () => {
   const history = useHistory();
   const [searchItem, setSearchItem] = useState("");
   const [searchData, setSearchData] = useState([]);
+  const { myData } = useContext(myContext);
 
   const handleSubmitForm = e => {
     e.preventDefault();
-    // console.log(handleSubmitForm, searchData);
     searchItem !== "" &&
       searchData.length > 0 &&
       history.push({ pathname: `/search/${searchItem}`, searchData });
@@ -21,8 +21,7 @@ const SearchInput = () => {
     const _item = e.target.value;
     setSearchItem(_item);
 
-    const newFilter = data.filter(value => {
-      // console.log(value.name);
+    const newFilter = myData.filter(value => {
       return value.description.toLowerCase().includes(_item.toLowerCase());
     });
 

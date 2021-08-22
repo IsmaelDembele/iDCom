@@ -9,7 +9,7 @@ const SearchPage = () => {
 
   useEffect(() => {
       setMyData(location.searchData);
-  }, [id]);
+  }, [id,location.searchData]);
 
   return (
     <div className="products-page">

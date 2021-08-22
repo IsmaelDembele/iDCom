@@ -7,20 +7,17 @@ import HomeIcon from "@material-ui/icons/Home";
 
 import SearchInput from "./SearchInput";
 import Logo from "../../assets/logo.jpg";
-import { ItemNumberContect } from "../../Helper/context";
+import { myContext } from "../../Helper/context";
 import { numeral_totalQuantity } from "../../Helper/function";
 
 const Header = () => {
   const [cartItemNumber, setCartItemNumer] = useState(0);
-
-  const { myCart } = useContext(ItemNumberContect);
+  const { myCart } = useContext(myContext);
 
   useEffect(() => {
     const _itemNumber = numeral_totalQuantity(myCart);
     setCartItemNumer(_itemNumber);
   }, [myCart]);
-
-
 
   return (
     <header className="header">
@@ -30,18 +27,6 @@ const Header = () => {
         </Link>
 
         <SearchInput />
-        {/* <form action="#" className="search">
-          <input
-            type="text"
-            className="search__input"
-            value={searchItem}
-            placeholder="Search for products"
-            onChange={e => handleChange(e)}
-          />
-          <button className="search__button" onClick={e => handleSubmitForm(e)}>
-            <GoSearch />
-          </button>
-        </form> */}
 
         <div className="navbar__sign-in">
           <Link to="/sign">sing in</Link>
@@ -59,7 +44,6 @@ const Header = () => {
           </Link>
         </div>
       </div>
-
 
       <div className="products">
         <Link to="/">

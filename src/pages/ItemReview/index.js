@@ -2,11 +2,10 @@ import React, { useEffect, useState, useContext } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
-import { ItemNumberContect } from "../../Helper/context";
+import { myContext } from "../../Helper/context";
 import { addToCart } from "../../Helper/function";
 
 const ItemReview = () => {
-  // const { id } = useParams();
   const location = useLocation();
   /**
    * o avoid reload error: location.item become null when the user
@@ -14,7 +13,7 @@ const ItemReview = () => {
    */
   const item = location.item ? location.item : JSON.parse(localStorage.getItem("item"));
   const history = useHistory();
-  const { myCart, setMyCart } = useContext(ItemNumberContect);
+  const { myCart, setMyCart } = useContext(myContext);
   const [displayImage, setDisplayImage] = useState(item.url);
   const [isActive, setIsActive] = useState(true);
 
@@ -23,7 +22,6 @@ const ItemReview = () => {
 
     setDisplayImage(item.url);
     setIsActive(true);
-
   }, [item]);
 
   const handleMousehover = (img, bool) => {
@@ -41,14 +39,15 @@ const ItemReview = () => {
         >
           {item !== null && <img src={item?.url} alt={`thumbnail ${item?.name}`} />}
         </div>
-        {(item.url2) &&
-        (<div
-          className="itemReview__thumbnail"
-          onMouseOver={() => handleMousehover(item?.url2, false)}
-          style={{ border: isActive ? "1px solid black" : "1px solid #0984e3" }}
-        >
-          <img src={item?.url2} alt={`thumbnail ${item?.name}`} />
-        </div>)}
+        {item.url2 && (
+          <div
+            className="itemReview__thumbnail"
+            onMouseOver={() => handleMousehover(item?.url2, false)}
+            style={{ border: isActive ? "1px solid black" : "1px solid #0984e3" }}
+          >
+            <img src={item?.url2} alt={`thumbnail ${item?.name}`} />
+          </div>
+        )}
       </div>
       <div className="itemReview__image">
         <img src={displayImage} alt={`thumbnail ${item?.name}`} />

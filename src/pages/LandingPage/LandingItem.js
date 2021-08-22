@@ -1,7 +1,6 @@
 import React from "react";
 
 const LandingItem = ({ id, url, name, price }) => {
-  // const [val, setVal] = useState({ id, url, name, price });
 
   return (
     <div  className="landing-item" key={id}>

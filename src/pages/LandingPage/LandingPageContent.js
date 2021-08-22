@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import LandingItem from "./LandingItem";
-import { data } from "../../data/data";
+import { myContext } from "../../Helper/context";
+
 import { v4 as uuidv4 } from "uuid";
 import { useHistory } from "react-router-dom";
 
 const Body = () => {
   const nbElement = 4;
-  const [myData] = useState(data);
+  const {myData} = useContext(myContext);
   const history = useHistory();
   const [listTitle] = useState(["electronics", "homes", "books", "fashion"]);
 

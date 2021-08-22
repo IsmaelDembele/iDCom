@@ -1,20 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Item from "./Item";
 import { useParams } from "react-router";
 
-import { data } from "../../data/data";
-import { useState} from "react";
+import { myContext } from "../../Helper/context";
 
 const Products = () => {
   const { id } = useParams();
-  const [myData] = useState(data);
+  const { myData } = useContext(myContext);
 
   return (
     <div className="products-page">
       <div className="products-page__title">{id}</div>
       <div className="products-page__list-item">
-        {
-        myData
+        {myData
           .filter(el => {
             return el.type === id;
           })

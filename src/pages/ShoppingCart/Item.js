@@ -1,10 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
-
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 
-import { ItemNumberContect } from "../../Helper/context";
+import { myContext } from "../../Helper/context";
 
 const myIndex = (id, myArray) => {
   let index;
@@ -20,7 +19,7 @@ const Item = React.memo(props => {
   const { id, url, name, price, qty } = props.item;
   const { _delete } = props;
 
-  const { myCart, setMyCart } = useContext(ItemNumberContect);
+  const { myCart, setMyCart } = useContext(myContext);
   const [itemQty, setItemQty] = useState(qty);
 
   useEffect(() => {
@@ -60,7 +59,6 @@ const Item = React.memo(props => {
                 id: "quantity",
               }}
             >
-              {/* <option aria-label="None" value="" /> */}
               <option value={1}>1</option>
               <option value={2}>2</option>
               <option value={3}>3</option>

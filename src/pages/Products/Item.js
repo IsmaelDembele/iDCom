@@ -3,13 +3,13 @@ import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 
 import { addToCart } from "../../Helper/function";
-import { ItemNumberContect } from "../../Helper/context";
+import { myContext } from "../../Helper/context";
 
 
 const Item = props => {
   const { id, url, name, price } = props.item;
   const history = useHistory();
-  const { myCart, setMyCart } = useContext(ItemNumberContect);
+  const { myCart, setMyCart } = useContext(myContext);
 
   const handleClick = item => {
     history.push({ pathname: `/itemReview/${id}`, item });
