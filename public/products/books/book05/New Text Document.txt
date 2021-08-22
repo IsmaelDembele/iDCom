@@ -1,7 +1,0 @@
-name: The Algorithm Design Manual (Texts in Computer Science) 3rd ed. 2020 Edition 
-
-description: "The Algorithm Design Manual (Texts in Computer Science) 3rd ed. 2020 Edition : My absolute favorite for this kind of interview preparation is Steven Skiena’s The Algorithm Design Manual. More than any other book it helped me understand just how astonishingly commonplace … graph problems are -- they should be part of every working programmer’s toolkit. The book also covers basic data structures and sorting algorithms, which is a nice bonus. … every 1 – pager has a simple picture, making it easy to remember. This is a great way to learn how to identify hundreds of problem types." (Steve Yegge, Get that Job at Google)"
-
-price: "$43.63"
-
-author: "Steven S. Skiena "

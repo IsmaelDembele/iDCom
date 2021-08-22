@@ -1,6 +1,0 @@
-name :"Bokhot Bartender Kit, 14 Piece Cocktail Shaker Set Stainless Steel Bar Tools with Rotating Stand, 25 oz Shaker Tins, Jigger, Spoon, Pourers, Muddler, Strainer, Tongs, Bottle Stoppers, Opener, Recipes "
-
-description : "Bokhot Bartender Kit, 14 Piece Cocktail Shaker Set Stainless Steel Bar Tools with Rotating Stand, 25 oz Shaker Tins, Jigger, Spoon, Pourers, Muddler, Strainer, Tongs, Bottle Stoppers, Opener, Recipes  :  【Premium 304 Stainless Steel】Bokhot premium cocktail shaker bar tools set (14 piece) stainless steel bartender kit are made of premium stainless steel. Harmless to health, is durable, leak-proof, and non-scratchable, rustproof, not deformed and easy to clean, Stainless steel set is very easy to clean by hand with warm soap water and keep their shine with ease, Adding a modern, Sophisticated touch to your home bar.
-【Bartender Kit with Rotating Stand】Cocktail shaker set, 360° rotating turntable stand carefully designed to keep your barware tools scratch-safe, For each specific tool, The bracket has a fixed position and a dent in the corresponding position. Keep your bar tidy and avoid clutter and lost tools. "
-
-price: "$39.99"

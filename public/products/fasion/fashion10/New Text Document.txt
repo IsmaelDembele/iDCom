@@ -1,6 +1,0 @@
- name: "Front Pocket Wallet for Men - RFID Blocking Leather Bifold Wallet with ID Window (Coal)"
-
-description: "Front Pocket Wallet for Men - RFID Blocking Leather Bifold Wallet with ID Window (Coal): Material: Made of 100% genuine leather, our brown bifold leather wallet is sturdy, long-lasting and durable. Handcrafted by professional designers, our leather wallets are designed for men to carry cash, coins, and other accessories in one place.
-Slim and Compact: The thin wallet measures 4.35x3.5x0.75 inches to perfectly fit your front pocket. It is small, compact and lightweight, yet it fits a lot more than it shows. "
-
-price: "$14.99"

@@ -1,7 +1,0 @@
-name: "Levi's Men's Casual Leather Belt "
-
-description: "Levi's Men's Casual Leather Belt :  100% Split Leather
-Belt closure
-GENUINE LEATHER: This Levi's genuine leather belt is a wardrobe essential for any man. The soft touch leather, grommet details, and beveled edges make it a unique elevated belt. Dress up your favorite pair of jeans with this Levi's leather 1.5" wide belt. "
-
-price: "$18.00"

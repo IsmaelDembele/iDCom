@@ -13,7 +13,7 @@ import { ItemNumberContect } from "../Helper/context";
 import { cartData } from "../data/cartData";
 
 const App = () => {
-  const [myCart, setMyCart] = useState(cartData);
+  const [myCart, setMyCart] = useState([]);
 
   return (
     <ItemNumberContect.Provider value={{ myCart, setMyCart }}>

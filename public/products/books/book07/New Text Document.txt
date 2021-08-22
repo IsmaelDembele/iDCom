@@ -1,7 +1,0 @@
-name "Python Data Science Handbook: Essential Tools for Working with Data ",
-
-description: "Python Data Science Handbook: Essential Tools for Working with Data: For many researchers, Python is a first-class tool mainly because of its libraries for storing, manipulating, and gaining insight from data. Several resources exist for individual pieces of this data science stack, but only with the Python Data Science Handbook do you get them all—IPython, NumPy, Pandas, Matplotlib, Scikit-Learn, and other related tools.",
-
-price: "$13.96",
-
-author: "Jake VanderPlas",

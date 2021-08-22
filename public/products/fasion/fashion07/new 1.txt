@@ -1,9 +1,0 @@
-name : "Lacoste L.12.12 Small Tote Bag "
-
-description: "Lacoste L.12.12 Small Tote Bag : 
-    100% Polyvinyl Chloride; Trim: 100% PU Split Leather
-    Imported
-    Pockets: 1 zip
-"
-
-price: "71.64"

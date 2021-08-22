@@ -1,5 +1,0 @@
-name: Apple iPhone 12 Pro Max
-
-description: Apple iPhone 12 Pro Max, 128GB, Gold - Fully Unlocked
-
-price: "$1340.00"

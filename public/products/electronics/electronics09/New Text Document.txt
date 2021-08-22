@@ -1,5 +1,0 @@
-name: "LG OLED48C1PUB"
-
-description: "LG OLED48C1PUB Alexa Built-in C1 Series 48" 4K Smart OLED TV (2021) "
-
-price : "$1200.00"

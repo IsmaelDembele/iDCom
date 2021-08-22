@@ -1,7 +1,0 @@
-name: "R Data Structures and Algorithms"
-
-description: "R Data Structures and Algorithms : See how to use data structures such as arrays, stacks, trees, lists, and graphs through real-world examples"
-
-price: "$29.99"
-
-Author: "Dr. PKS Prakash, Achyutuni Sri Krishna Rao"

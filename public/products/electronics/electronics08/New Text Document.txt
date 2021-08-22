@@ -1,8 +1,0 @@
-name: "SAMSUNG Galaxy Tab 12.4 inch"
-
-description: "SAMSUNG Galaxy Tab S7 FE 2021 Android Tablet 12.4” Screen WiFi 64GB S Pen Included Long-Lasting Battery Powerful Performance, Mystic Black "
-
-price: "$499.00"
-
-
-

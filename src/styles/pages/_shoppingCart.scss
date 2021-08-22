@@ -1,7 +1,9 @@
 .shopping {
   color: $text__color;
   display: grid;
-  background-image: linear-gradient(to bottom, $primary, $secondary);
+  background-image: linear-gradient(to bottom,$primary, $secondary);
+
+  min-height: calc(100vh - 27rem);
 
   grid-template-columns: 1fr 32rem;
   column-gap: 2rem;
@@ -19,7 +21,7 @@
   }
 
   &__item {
-    height: 20rem;
+    height: 20.2rem;
     border: 1px solid #e1e1e4;
     margin-bottom: 1rem;
 

@@ -10,7 +10,7 @@ export const data = [
     name: "asus TUF Gaming",
     price: "$1599.99",
     description:
-      "ASUS TUF Gaming F17 Gaming Laptop, 17.3” 144Hz Full HD IPS-Type, Intel Core i7-11800H Processor, GeForce RTX 3050 Ti, 16GB DDR4, 512GB PCIe SSD, Gigabit Wi-Fi 6, Windows 10 Home, TUF706HE-DS74",
+      "ASUS TUF Gaming F17 Gaming Laptop, 17.3” 144Hz Full HD IPS-Type, Intel Core i7-11800H Processor, GeForce RTX 3050 Ti, 16GB DDR4, 512GB PCIe SSD, Gigabit Wi-Fi 6, Windows 10 Home, TUF706HE-DS74.",
   },
   {
     id: uuidv4(),
@@ -18,7 +18,7 @@ export const data = [
     url: process.env.PUBLIC_URL + "/products/electronics/electronics02/electronic1.jpg",
     url2: process.env.PUBLIC_URL + "/products/electronics/electronics02/electronic2.jpg",
     description:
-      "Apple MacBook Pro 16: with Touch Bar, 9th-Gen 8-Core Intel i9 2.3GHz, 16GB RAM, 1TB SSD, AMD Radeon Pro 5500M 8GB, Space Gray, Late 2019 Z0Y0005J7 / Z0Y00006M ",
+      "Apple MacBook Pro 16 - with Touch Bar, 9th-Gen 8-Core Intel i9 2.3GHz, 16GB RAM, 1TB SSD, AMD Radeon Pro 5500M 8GB, Space Gray, Late 2019 Z0Y0005J7 / Z0Y00006M.",
     name: "Apple MacBook Pro 16 inch",
     price: "$2779.85",
   },
@@ -28,7 +28,7 @@ export const data = [
     url: process.env.PUBLIC_URL + "/products/electronics/electronics03/electronic1.jpg",
     url2: process.env.PUBLIC_URL + "/products/electronics/electronics03/electronic2.jpg",
     description:
-      "ROG Strix GA15DK Gaming Desktop PC, AMD Ryzen 7 5800X, GeForce RTX 3070, 16GB DDR4 RAM, 512GB SSD + 1TB HDD, Wi-Fi 5, Windows 10 Home, GA15DK-AS776",
+      "ROG Strix GA15DK Gaming Desktop PC, AMD Ryzen 7 5800X, GeForce RTX 3070, 16GB DDR4 RAM, 512GB SSD + 1TB HDD, Wi-Fi 5, Windows 10 Home, GA15DK-AS776.",
     name: "ROG Strix GA15DK Gaming",
     price: "$1948.99",
   },
@@ -37,7 +37,7 @@ export const data = [
     type: "electronics",
     url: process.env.PUBLIC_URL + "/products/electronics/electronics04/electronic1.jpg",
     url2: process.env.PUBLIC_URL + "/products/electronics/electronics04/electronic2.jpg",
-    description: "Apple Mac Mini with Apple M1 Chip (8GB RAM, 256GB SSD Storage)",
+    description: "Apple Mac Mini with Apple M1 Chip (8GB RAM, 256GB SSD Storage).",
     name: "Apple Mac Mini",
     price: "$600.00",
   },
@@ -46,7 +46,7 @@ export const data = [
     type: "electronics",
     url: process.env.PUBLIC_URL + "/products/electronics/electronics05/electronic1.jpg",
     url2: process.env.PUBLIC_URL + "/products/electronics/electronics05/electronic2.jpg",
-    description: "Apple iPhone 12 Pro Max, 128GB, Gold - Fully Unlocked",
+    description: "Apple iPhone 12 Pro Max, 128GB, Gold - Fully Unlocked.",
     name: "Apple iPhone 12 Pro Max",
     price: "$1340.00",
   },
@@ -56,7 +56,7 @@ export const data = [
     url: process.env.PUBLIC_URL + "/products/electronics/electronics06/electronic1.jpg",
     url2: process.env.PUBLIC_URL + "/products/electronics/electronics06/electronic2.jpg",
     description:
-      "SAMSUNG Galaxy S21 Ultra 5G Factory Unlocked Android Cell Phone 128GB US Version Smartphone Pro-Grade Camera 8K Video 108MP High Res, Phantom Silver",
+      "SAMSUNG Galaxy S21 Ultra 5G Factory Unlocked Android Cell Phone 128GB US Version Smartphone Pro-Grade Camera 8K Video 108MP High Res, Phantom Silver.",
     name: "SAMSUNG Galaxy S21 Ultra",
     price: "$949.00",
   },
@@ -65,7 +65,7 @@ export const data = [
     type: "electronics",
     url: process.env.PUBLIC_URL + "/products/electronics/electronics07/electronic1.jpg",
     url2: process.env.PUBLIC_URL + "/products/electronics/electronics07/electronic2.jpg",
-    description: "2021 Apple 12.9-inch iPad Pro (Wi‑Fi, 128GB) - Space Gray ",
+    description: "2021 Apple 12.9-inch iPad Pro (Wi‑Fi, 128GB) - Space Gray.",
     name: "Apple 12.9-inch iPad Pro",
     price: "$999.00",
   },
@@ -75,7 +75,7 @@ export const data = [
     url: process.env.PUBLIC_URL + "/products/electronics/electronics08/electronic1.jpg",
     url2: process.env.PUBLIC_URL + "/products/electronics/electronics08/electronic2.jpg",
     description:
-      "SAMSUNG Galaxy Tab S7 FE 2021 Android Tablet 12.4” Screen WiFi 64GB S Pen Included Long-Lasting Battery Powerful Performance, Mystic Black ",
+      "SAMSUNG Galaxy Tab S7 FE 2021 Android Tablet 12.4” Screen WiFi 64GB S Pen Included Long-Lasting Battery Powerful Performance, Mystic Black.",
     price: "$499.00",
     name: "SAMSUNG Galaxy Tab 12.4 inch",
   },
@@ -84,7 +84,7 @@ export const data = [
     type: "electronics",
     url: process.env.PUBLIC_URL + "/products/electronics/electronics09/electronic1.jpg",
     url2: process.env.PUBLIC_URL + "/products/electronics/electronics09/electronic2.jpg",
-    description: "LG OLED48C1PUB Alexa Built-in C1 Series 48 4K Smart OLED TV (2021) ",
+    description: "LG OLED48C1PUB Alexa Built-in C1 Series 48 4K Smart OLED TV (2021).",
     name: "LG OLED48C1PUB",
     price: "$1200.00",
   },
@@ -94,7 +94,7 @@ export const data = [
     url: process.env.PUBLIC_URL + "/products/electronics/electronics10/electronic1.jpg",
     url2: process.env.PUBLIC_URL + "/products/electronics/electronics10/electronic2.jpg",
     description:
-      "SAMSUNG 65-Inch Class Frame Series - 4K Quantum HDR Smart TV with Alexa Built-in (QN65LS03AAFXZA, 2021 Model)",
+      "SAMSUNG 65-Inch Class Frame Series - 4K Quantum HDR Smart TV with Alexa Built-in (QN65LS03AAFXZA, 2021 Model).",
     name: "SAMSUNG 65-Inch Class Frame Series",
     price: "$1599.99",
   },
@@ -108,7 +108,7 @@ export const data = [
     name: "Silicone Kitchen Cooking Utensil Set",
     price: "$16.95",
     description:
-      "Silicone Kitchen Cooking Utensil Set, EAGMAK 16PCS Kitchen Utensils Spatula Set with Stainless Steel Stand for Nonstick Cookware, BPA Free Non-Toxic Cooking Utensils, Kitchen Tools Gift (Mint Green) : Food Grade Safe Silicone -- Made of food-grade silicone, BPA-free, very safe to use in any type of food. This silicone cooking utensils does not react with food or beverages, or produce any hazardous fumes, you don’t have to worry about the health of your families. And it will probably last longer than the other plastic kitchen utensils. ",
+      "Silicone Kitchen Cooking Utensil Set, EAGMAK 16PCS Kitchen Utensils Spatula Set with Stainless Steel Stand for Nonstick Cookware, BPA Free Non-Toxic Cooking Utensils, Kitchen Tools Gift (Mint Green) : Food Grade Safe Silicone - Made of food-grade silicone, BPA-free, very safe to use in any type of food. This silicone cooking utensils does not react with food or beverages, or produce any hazardous fumes, you don’t have to worry about the health of your families. And it will probably last longer than the other plastic kitchen utensils. ",
   },
   {
     id: uuidv4(),
@@ -118,9 +118,9 @@ export const data = [
     name: "Mop and Broom Holder",
     price: "$13.99",
     description:
-      "Home- Mop and Broom Holder, 5 Position with 6 Hooks Garage Storage Holds up to 11 Tools, Storage Solutions for Broom Holders, Garage Storage Systems Broom Organizer for Garage Shelving Ideas :  Plastic" +
-      "Made in USA or Imported" +
-      "superior Quality Tool Rack Holds Mops, Brooms, or Sports Equipment and Storage Tool Rack Storage & Organization",
+      "Home- Mop and Broom Holder, 5 Position with 6 Hooks Garage Storage Holds up to 11 Tools, Storage Solutions for Broom Holders, Garage Storage Systems Broom Organizer for Garage Shelving Ideas :  Plastic. " +
+      "Made in USA or Imported - " +
+      "superior Quality Tool Rack Holds Mops, Brooms, or Sports Equipment and Storage Tool Rack Storage & Organization.",
   },
   {
     id: uuidv4(),
@@ -130,8 +130,8 @@ export const data = [
     name: "Brita Standard Everyday Water Filter",
     price: "$27.99",
     description:
-      "Brita Standard Everyday Water Filter Pitcher, White, Large 10 Cup, 1 Count : The BPA-free Everyday water pitcher with filter holds 10 cups of water, enough to fill 3 24-ounce reusable water bottles" +
-      "Get great-tasting water without the waste; by switching to Brita, you can save money and replace 1,800 single-use plastic water bottles a year ",
+      "Brita Standard Everyday Water Filter Pitcher, White, Large 10 Cup, 1 Count : The BPA-free Everyday water pitcher with filter holds 10 cups of water, enough to fill 3 24-ounce reusable water bottles - " +
+      "Get great-tasting water without the waste; by switching to Brita, you can save money and replace 1,800 single-use plastic water bottles a year.",
   },
   {
     id: uuidv4(),
@@ -141,8 +141,8 @@ export const data = [
     name: "Oyydecor Spice Rack Organizer Wall Mounted",
     price: "$24.99",
     description:
-      "Oyydecor Spice Rack Organizer Wall Mounted 4-Tier Stackable Counter-top or Wall Mount Spice Rack Spice Shelf Storage Racks,Great for Kitchen Household Items,Bathroom and More :  【4 TIER SPICE RACK 】 — Organize your favorite spices, seasonings, and everyday household items with a decorative wall mounted rack featuring 4 tier shelves, perfect for kitchen and/or bathroom storage" +
-      "[ELIMINATE CLUTTER] — Instantly free counter and cabinet space — Save the time and hassle of searching through cabinets for desired ingredients and products — Quickly view and neatly arrange items in one place ",
+      "Oyydecor Spice Rack Organizer Wall Mounted 4-Tier Stackable Counter-top or Wall Mount Spice Rack Spice Shelf Storage Racks,Great for Kitchen Household Items,Bathroom and More -  [4 TIER SPICE RACK ] — Organize your favorite spices, seasonings, and everyday household items with a decorative wall mounted rack featuring 4 tier shelves, perfect for kitchen and/or bathroom storage - " +
+      "[ELIMINATE CLUTTER] — Instantly free counter and cabinet space — Save the time and hassle of searching through cabinets for desired ingredients and products — Quickly view and neatly arrange items in one place.",
   },
   {
     id: uuidv4(),
@@ -152,11 +152,11 @@ export const data = [
     name: "Greenco 5 Tier Wall Mount Corner Shelves",
     price: "$21.91",
     description:
-      'Greenco 5 Tier Wall Mount Corner Shelves Espresso Finish , 7.75" L x 7.75" W x 48.5" H. :  5 tier wall mount corner shelves Made of durable MDF laminate.' +
-      "Beautiful espresso finish that suits almost any decor." +
-      "Easy to mount with all necessary hardware Included." +
-      "Decorative and functional for your home, office, or dorm room." +
-      'Dimensions in inches: 7.75" L x 7.75" W x 48.5"',
+      `Greenco 5 Tier Wall Mount Corner Shelves Espresso Finish , 7.75" L x 7.75" W x 48.5" H. -  5 tier wall mount corner shelves Made of durable MDF laminate.
+      Beautiful espresso finish that suits almost any decor.
+      Easy to mount with all necessary hardware Included.
+      Decorative and functional for your home, office, or dorm room.
+      Dimensions in inches: 7.75" L x 7.75" W x 48.5".`,
   },
   {
     id: uuidv4(),
@@ -166,8 +166,8 @@ export const data = [
     name: "28 LEDs Solar Lights Outdoor",
     price: "$24.99",
     description:
-      "28 LEDs Solar Lights Outdoor, Luposwiten Solar Motion Sensor Lights Wireless Security Lights, 400 Lumen Waterproof Solar Powered Lights for Steps Yard Garage Porch Patio（4-Pack） :  400lm Brightness & 120 Degree Lighting Range: Luposwiten solar light has 28 powerful LEDs which produces 400 lumens illumination. More lumens means much brighter light it is. Say goodbye to darkness in the evening and costly electricity bills." +
-      "5000 Hours Quality Long Lasting: This solar outdoor lights is designed with waterproof IP65. It will survive heat, rain, cold, and frost. Its lifespan amounts to 5, 000 hours, much longer than any ordinary motion sensor lights. ",
+      "28 LEDs Solar Lights Outdoor, Luposwiten Solar Motion Sensor Lights Wireless Security Lights, 400 Lumen Waterproof Solar Powered Lights for Steps Yard Garage Porch Patio（4-Pack.  400lm Brightness & 120 Degree Lighting Range. Luposwiten solar light has 28 powerful LEDs which produces 400 lumens illumination. More lumens means much brighter light it is. Say goodbye to darkness in the evening and costly electricity bills." +
+      "5000 Hours Quality Long Lasting. This solar outdoor lights is designed with waterproof IP65. It will survive heat, rain, cold, and frost. Its lifespan amounts to 5, 000 hours, much longer than any ordinary motion sensor lights. ",
   },
 
   {
@@ -178,7 +178,7 @@ export const data = [
     name: "Indian Diwali Gifts Home Decoration",
     price: "$18.99",
     description:
-      "Indian Diwali Gifts Home Decoration - Hindu OM Housewarming Return Gifts India Pooja Item Door Hanging Wall Decor Wedding Party Arts Presents : EXQUISITE CRAFTSMANSHIP Thousands of years old Asian home decoration art craft form Indian subcontinent - 100% hand painted by Indian Artist. ",
+      "Indian Diwali Gifts Home Decoration - Hindu OM Housewarming Return Gifts India Pooja Item Door Hanging Wall Decor Wedding Party Arts Presents. EXQUISITE CRAFTSMANSHIP Thousands of years old Asian home decoration art craft form Indian subcontinent - 100% hand painted by Indian Artist. ",
   },
 
   {
@@ -271,7 +271,7 @@ export const data = [
 
     name: "The Algorithm Design Manual (Texts in Computer Science) 3rd ed. 2020 Edition",
     description:
-      "The Algorithm Design Manual (Texts in Computer Science) 3rd ed. 2020 Edition : My absolute favorite for this kind of interview preparation is Steven Skiena’s The Algorithm Design Manual. More than any other book it helped me understand just how astonishingly commonplace … graph problems are -- they should be part of every working programmer’s toolkit. The book also covers basic data structures and sorting algorithms, which is a nice bonus. … every 1 – pager has a simple picture, making it easy to remember. This is a great way to learn how to identify hundreds of problem types.: (Steve Yegge, Get that Job at Google)",
+      "The Algorithm Design Manual (Texts in Computer Science) 3rd ed. 2020 Edition : My absolute favorite for this kind of interview preparation is Steven Skiena’s The Algorithm Design Manual. More than any other book it helped me understand just how astonishingly commonplace … graph problems are -- they should be part of every working programmer’s toolkit. The book also covers basic data structures and sorting algorithms, which is a nice bonus. … every 1 – pager has a simple picture, making it easy to remember. This is a great way to learn how to identify hundreds of problem types.: (Steve Yegge, Get that Job at Google).",
     price: "$43.63",
     author: "Steven S. Skiena ",
   },
@@ -320,49 +320,121 @@ export const data = [
   {
     id: uuidv4(),
     type: "fashion",
-    url: "https://picsum.photos/400/400",
-    url2: "https://picsum.photos/400/400",
-    name: "Isack",
-    price: "$212.16",
+    url: process.env.PUBLIC_URL + "/products/fashion/fashion03/fashion1.jpg",
+    url2: process.env.PUBLIC_URL + "/products/fashion/fashion03/fashion2.jpg",
+    name: "Steve Madden Men's Dress Casual Every Day Reversible Leather Belt",
+    price: "$12.99",
+    description:
+      "Steve Madden Men's Dress Casual Every Day Reversible Leather Belt:  50% Leather, 50% Polyurethane" +
+      "Imported" +
+      "Belt closure" +
+      "Hand Wash ",
   },
   {
     id: uuidv4(),
     type: "fashion",
-    url: "https://picsum.photos/400/400",
-    url2: "https://picsum.photos/400/400",
-    name: "Isack",
-    price: "$212.16",
+    url: process.env.PUBLIC_URL + "/products/fashion/fashion04/fashion1.jpg",
+    url2: process.env.PUBLIC_URL + "/products/fashion/fashion04/fashion2.jpg",
+    name: "Levi's Men's Casual Leather Belt",
+    price: "$18.00",
+    description: `Levi's Men's Casual Leather Belt :  100% Split Leather
+    Belt closure
+    GENUINE LEATHER: This Levi's genuine leather belt is a wardrobe essential for any man. The soft touch leather, grommet details, and beveled edges make it a unique elevated belt. Dress up your favorite pair of jeans with this Levi's leather 1.5" wide belt. `,
   },
   {
     id: uuidv4(),
     type: "fashion",
-    url: "https://picsum.photos/400/400",
-    url2: "https://picsum.photos/400/400",
-    name: "Isack",
-    price: "$212.16",
+    url: process.env.PUBLIC_URL + "/products/fashion/fashion05/fashion1.jpg",
+    url2: process.env.PUBLIC_URL + "/products/fashion/fashion05/fashion2.jpg",
+    name: "Calvin Klein Men's Slim Fit Suit Separates",
+    price: "$87.33",
+    description: `Calvin Klein Men's Slim Fit Suit Separates :  94% Wool, 6% Lycra Spandex
+    Imported
+    Button closure
+    Dry Clean Only
+    The advantage of the Calvin Klein Slim Fit Suit Separate is the ability to customize your jacket and pant size. Select your sizes and add them to the cart separately. `,
   },
   {
     id: uuidv4(),
     type: "fashion",
-    url: "https://picsum.photos/400/400",
-    url2: "https://picsum.photos/400/400",
-    name: "Pennicott",
-    price: "$6544.65",
+    url: process.env.PUBLIC_URL + "/products/fashion/fashion06/fashion1.jpg",
+    url2: process.env.PUBLIC_URL + "/products/fashion/fashion06/fashion2.jpg",
+    name: `Kenneth Cole REACTION Men's Techni-Cole Stretch Slim Fit Suit`,
+    price: "$73.31",
+    description: `Kenneth Cole REACTION Men's Techni-Cole Stretch Slim Fit Suit Separate (Blazer, Pant, and Vest) : 
+    87% Polyester, 12% Rayon, 1% Spandex
+    Imported
+    Button closure
+    Dry Clean Only
+    Blazer, pant, and vest sold separately
+    Stretch fabric. Fully lined interior
+    Double vented`,
   },
   {
     id: uuidv4(),
     type: "fashion",
-    url: "https://picsum.photos/400/400",
-    url2: "https://picsum.photos/400/400",
-    name: "Tanguy",
-    price: "$8569.68",
+    url: process.env.PUBLIC_URL + "/products/fashion/fashion07/fashion1.jpg",
+    url2: process.env.PUBLIC_URL + "/products/fashion/fashion07/fashion2.jpg",
+    name: "Lacoste L.12.12 Small Tote Bag ",
+    price: "$71.64",
+    description: `Lacoste L.12.12 Small Tote Bag : 
+    100% Polyvinyl Chloride; Trim: 100% PU Split Leather
+    Imported
+    Pockets: 1 zip`,
   },
   {
     id: uuidv4(),
     type: "fashion",
-    url: "https://picsum.photos/400/400",
-    url2: "https://picsum.photos/400/400",
-    name: "ismo",
-    price: "$89.68",
+    url: process.env.PUBLIC_URL + "/products/fashion/fashion08/fashion1.jpg",
+    url2: process.env.PUBLIC_URL + "/products/fashion/fashion08/fashion2.jpg",
+    name: `Fossil Women's Jolie Leather Crossbody Purse Handbag`,
+    price: "$69.30",
+    description: `Fossil Women's Jolie Leather Crossbody Purse Handbag :  Imported
+    This embossed leather crossbody features 1 zipper pocket, 1 back slide pocket with magnetic snap and an adjustable and detachable crossbody strap.
+    This embossed leather crossbody features 1 zipper pocket, 1 back slide pocket with magnetic snap and an adjustable and detachable crossbody strap. `,
+  },
+  {
+    id: uuidv4(),
+    type: "fashion",
+    url: process.env.PUBLIC_URL + "/products/fashion/fashion09/fashion1.jpg",
+    url2: process.env.PUBLIC_URL + "/products/fashion/fashion09/fashion2.jpg",
+    name: "TRAVANDO Mens Slim Wallet with Money Clip AUSTIN RFID Blocking",
+    price: "$29.95",
+    description: `TRAVANDO Mens Slim Wallet with Money Clip AUSTIN RFID Blocking Bifold Credit Card Holder for Men with Gift Box :  RFID Protected lining.
+    - Bifold closure -
+    𝗙𝗨𝗡𝗖𝗧𝗜𝗢𝗡𝗔𝗟 & 𝗦𝗟𝗜𝗠 – Travando’s Wallet offers 11 card pockets The slim wallet is ideal for carrying business cards, credit and debit cards, bills etc.. The outside notch allows you to push out the cards easily. `,
+  },
+  {
+    id: uuidv4(),
+    type: "fashion",
+    url: process.env.PUBLIC_URL + "/products/fashion/fashion10/fashion1.jpg",
+    url2: process.env.PUBLIC_URL + "/products/fashion/fashion10/fashion2.jpg",
+    name: "Front Pocket Wallet for Men - RFID Blocking Leather",
+    price: "$14.99",
+    description: `Front Pocket Wallet for Men - RFID Blocking Leather Bifold Wallet with ID Window (Coal): Material: Made of 100% genuine leather, our brown bifold leather wallet is sturdy, long-lasting and durable. Handcrafted by professional designers, our leather wallets are designed for men to carry cash, coins, and other accessories in one place.
+    Slim and Compact: The thin wallet measures 4.35x3.5x0.75 inches to perfectly fit your front pocket. It is small, compact and lightweight, yet it fits a lot more than it shows. `,
+  },
+  {
+    id: uuidv4(),
+    type: "fashion",
+    url: process.env.PUBLIC_URL + "/products/fashion/fashion01/fashion1.jpg",
+    url2: process.env.PUBLIC_URL + "/products/fashion/fashion01/fashion2.jpg",
+    name: "adidas Men's CF Lite Racer",
+    price: "$54.97",
+    description:
+      "adidas Men's CF Lite Racer Byd - " +
+      "100% Other fibers - " +
+      "Imported - " +
+      "Synthetic sole - " +
+      "Shaft measures approximately 6-12 inches from arch.",
+  },
+  {
+    id: uuidv4(),
+    type: "fashion",
+    url: process.env.PUBLIC_URL + "/products/fashion/fashion02/fashion1.jpg",
+    url2: process.env.PUBLIC_URL + "/products/fashion/fashion02/fashion2.jpg",
+    name: "Clarks Men's Tilden Cap Oxford Shoe",
+    price: "55.68",
+    description: "Clarks Men's Tilden Cap Oxford Shoe" + "100% Leather",
   },
 ];

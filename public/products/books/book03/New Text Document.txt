@@ -1,7 +1,0 @@
-name: "Man's Search for Meaning"
-
-description: "Man's Search for Meaning: A book for finding purpose and strength in times of great despair, the international best-seller is still just as relevant today as when it was first published."
-
-price: "$8.39"
-
-Author: "Viktor E. Frankl"

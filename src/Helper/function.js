@@ -24,12 +24,11 @@ export const addToCart = (item,myCart,setMyCart,history) => {
   find && history.push('/shopping');
 };
 
-export const numaral_totalPrice = myArray => {
+export const numeral_totalPrice = myArray => {
   let myTotal = 0;
   myArray.forEach(item => {
     //put string-money to number '$100.45' -> 100.45
     const currentTotal = numeral(item.price);
-    myTotal += currentTotal._value;
     myTotal += currentTotal._value * item.qty;
   });
   return myTotal;

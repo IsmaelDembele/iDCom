@@ -3,20 +3,23 @@ import Item from "./Item";
 import Button from "@material-ui/core/Button";
 
 import { ItemNumberContect } from "../../Helper/context";
-import {
-  numaral_totalPrice,
-  number_to_money,
-  numeral_totalQuantity,
-} from "../../Helper/function";
+import { numeral_totalPrice, number_to_money, numeral_totalQuantity } from "../../Helper/function";
 
 const Cart = () => {
   const [total, setTotal] = useState(0);
   const { myCart, setMyCart } = useContext(ItemNumberContect);
 
   useEffect(() => {
-    const _total = numaral_totalPrice(myCart);
+    const _total = numeral_totalPrice(myCart);
+    // console.log(myCart.length, "storage");
+    myCart.length > 0 && localStorage.setItem("myCart", JSON.stringify(myCart));
     setTotal(_total);
   }, [myCart]);
+
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem("myCart"));
+    cart && setMyCart(cart);
+  }, []);
 
   const handleDelete = id => {
     console.log(id);
@@ -24,7 +27,7 @@ const Cart = () => {
       return id !== item.id;
     });
 
-    console.log(newCart);
+    // console.log(newCart);
 
     // console.log(newCart);
     setMyCart(newCart);

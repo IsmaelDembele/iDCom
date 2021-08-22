@@ -1,5 +1,0 @@
-name: "SAMSUNG 65-Inch Class Frame Series" 
-
-description: "SAMSUNG 65-Inch Class Frame Series - 4K Quantum HDR Smart TV with Alexa Built-in (QN65LS03AAFXZA, 2021 Model) "
-
-price: "$1599.99"

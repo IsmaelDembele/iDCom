@@ -1,6 +1,0 @@
-name: "28 LEDs Solar Lights Outdoor, Luposwiten Solar Motion Sensor Lights Wireless Security Lights, 400 Lumen Waterproof Solar Powered Lights for Steps Yard Garage Porch Patio（4-Pack） "
-
-description: "28 LEDs Solar Lights Outdoor, Luposwiten Solar Motion Sensor Lights Wireless Security Lights, 400 Lumen Waterproof Solar Powered Lights for Steps Yard Garage Porch Patio（4-Pack） :  400lm Brightness & 120 Degree Lighting Range: Luposwiten solar light has 28 powerful LEDs which produces 400 lumens illumination. More lumens means much brighter light it is. Say goodbye to darkness in the evening and costly electricity bills.
-5000 Hours Quality Long Lasting: This solar outdoor lights is designed with waterproof IP65. It will survive heat, rain, cold, and frost. Its lifespan amounts to 5, 000 hours, much longer than any ordinary motion sensor lights. "
-
-price: "$24.99"

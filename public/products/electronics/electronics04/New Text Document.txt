@@ -1,7 +1,0 @@
-name: Apple Mac Mini
-
-description: Apple Mac Mini with Apple M1 Chip (8GB RAM, 256GB SSD Storage) 
-
-price: "$600.00"
-
-

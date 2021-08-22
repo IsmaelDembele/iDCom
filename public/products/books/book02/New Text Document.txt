@@ -1,7 +1,0 @@
-name:"The Basics of Bitcoins and Blockchains"
-
-description "The Basics of Bitcoins and Blockchains: An Introduction to Cryptocurrencies and the Technology. There’s a lot of information on cryptocurrency and blockchains out there. But, for the uninitiated, most of this information can be indecipherable. The Basics of Bitcoins and Blockchains aims to provide an accessible guide to this new currency and the revolutionary technology that powers it."
-
-price: "$20.63"
-
-Author: "Antony Lewis"

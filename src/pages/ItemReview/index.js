@@ -37,18 +37,19 @@ const ItemReview = () => {
         >
           {item !== null && <img src={item?.url} alt={`thumbnail ${item?.name}`} />}
         </div>
-        <div
+        {(item.url2) &&
+        (<div
           className="itemReview__thumbnail"
           onMouseOver={() => handleMousehover(item?.url2, false)}
           style={{ border: isActive ? "1px solid black" : "1px solid #0984e3" }}
         >
           <img src={item?.url2} alt={`thumbnail ${item?.name}`} />
-        </div>
+        </div>)}
       </div>
       <div className="itemReview__image">
         <img src={displayImage} alt={`thumbnail ${item?.name}`} />
       </div>
-      <div className="itemReview__specification">{item.name}</div>
+      <div className="itemReview__specification">{item.description}</div>
       <div className="itemReview__buy">
         <div className="itemReview__price">{item.price}</div>
         <Button

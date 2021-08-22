@@ -1,6 +1,0 @@
-name: "Brita Standard Everyday Water Filter Pitcher, White, Large 10 Cup, 1 Count "
-
-description: "Brita Standard Everyday Water Filter Pitcher, White, Large 10 Cup, 1 Count : The BPA-free Everyday water pitcher with filter holds 10 cups of water, enough to fill 3 24-ounce reusable water bottles
-Get great-tasting water without the waste; by switching to Brita, you can save money and replace 1,800 single-use plastic water bottles a year "
-
-price: "$27.99"

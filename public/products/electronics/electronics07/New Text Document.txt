@@ -1,5 +1,0 @@
-name: "Apple 12.9-inch iPad Pro"
-
-description: "2021 Apple 12.9-inch iPad Pro (Wi‑Fi, 128GB) - Space Gray "
-
-price: "$999.00"

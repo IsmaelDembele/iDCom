@@ -3,7 +3,8 @@
   display: grid;
 
   grid-template-columns: 6rem 40rem 1fr 1fr;
-
+  min-height: calc(100vh - 27rem);// header is 12rem footer is 15rem
+  
   column-gap: 5rem;
   &__list-thumbnail {
   }
@@ -13,23 +14,28 @@
       width: 100%;
     margin-bottom: 1rem;
     padding-left: .9rem;
+    min-height: 4rem;
     // padding-right: .1rem;
     border: 1px solid black;
     img {
-      height: 4rem;
-      width: 4rem;
+      max-height: 4rem;
+      max-width: 4rem;
+      // min-height: 4rem;
     }
   }
 
   &__image {
+    // height: 50vh;
     img {
-      height: 40rem;
-      width: 40rem;
+      max-height: 30rem;
+      max-width: 30rem;
     }
   }
 
   &__specification {
-    justify-self: center;
+    // justify-self: center;
+    font-size: 1.9rem;
+    font-weight: 500;
   }
 
   &__buy {

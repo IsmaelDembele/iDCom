@@ -29,8 +29,8 @@
   &__item-picture {
     img {
       cursor: pointer;
-      height: 20rem;
-      width: auto;
+      max-height: 20rem;
+      max-width: 20rem;
     }
 
     p {
