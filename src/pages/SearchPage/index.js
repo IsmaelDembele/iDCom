@@ -17,7 +17,7 @@ const SearchPage = () => {
       <div className="products-page__list-item">
         {myData.length > 0 &&
           myData.map((item, index) => {
-            return <Item key={item.id} item={item} />;
+            return <Item key={item._id} item={item} />;
           })}
       </div>
     </div>

@@ -12,7 +12,7 @@ const Body = () => {
   const [listTitle] = useState(["electronics", "homes", "books", "fashion"]);
 
   const handleClick = item => {
-    history.push({ pathname: `/itemReview/${item.id}`, item });
+    history.push({ pathname: `/itemReview/${item._id}`, item });
   };
 
   return (

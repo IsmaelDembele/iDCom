@@ -7,12 +7,12 @@ import { myContext } from "../../Helper/context";
 
 
 const Item = props => {
-  const { id, url, name, price } = props.item;
+  const { _id, url, name, price } = props.item;
   const history = useHistory();
   const { myCart, setMyCart } = useContext(myContext);
 
   const handleClick = item => {
-    history.push({ pathname: `/itemReview/${id}`, item });
+    history.push({ pathname: `/itemReview/${_id}`, item });
   };
 
   return (

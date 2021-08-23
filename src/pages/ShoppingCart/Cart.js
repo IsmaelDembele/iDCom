@@ -21,11 +21,11 @@ const Cart = () => {
   }, [setMyCart]);
 
   const handleDelete = id => {
-    console.log(id);
     const newCart = myCart.filter(item => {
-      return id !== item.id;
+      return id !== item._id;
     });
     setMyCart(newCart);
+    localStorage.setItem("myCart", JSON.stringify(newCart));
   };
 
   return (
@@ -34,7 +34,7 @@ const Cart = () => {
         <div className="shopping__title">Shopping Cart</div>
 
         {myCart.map(item => (
-          <Item key={item.id} item={item} _delete={id => handleDelete(id)} />
+          <Item key={item._id} item={item} _delete={() => handleDelete(item._id)} />
         ))}
       </div>
 

@@ -4,28 +4,18 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 
 import { myContext } from "../../Helper/context";
-
-const myIndex = (id, myArray) => {
-  let index;
-  myArray.forEach((el, i) => {
-    if(el.id === id)
-    index = i;
-  });
-
-  return index;
-};
+import {myIndex} from "../../Helper/function";
 
 const Item = React.memo(props => {
-  const { id, url, name, price, qty } = props.item;
+  const { _id, url, name, price, qty } = props.item;
   const { _delete } = props;
 
   const { myCart, setMyCart } = useContext(myContext);
   const [itemQty, setItemQty] = useState(qty);
 
   useEffect(() => {
-    console.log(1);
     const _myCart = [...myCart];
-    const index = myIndex(id, _myCart);
+    const index = myIndex(_id, _myCart);
     _myCart[index].qty = itemQty;
     setMyCart(_myCart);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -33,8 +23,6 @@ const Item = React.memo(props => {
 
   const handleChangeQty = event => {
     const _qty = event.target.value;
-    console.log(_qty);
-    console.log(myCart);
     setItemQty(_qty);
   };
 
@@ -71,7 +59,7 @@ const Item = React.memo(props => {
             </Select>
           </FormControl>
         </div>
-        <div className="shopping__delete" onClick={() => _delete(id)}>
+        <div className="shopping__delete" onClick={() => _delete(_id)}>
           delete
         </div>
       </div>

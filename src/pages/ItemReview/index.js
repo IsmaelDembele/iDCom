@@ -8,7 +8,7 @@ import { addToCart } from "../../Helper/function";
 const ItemReview = () => {
   const location = useLocation();
   /**
-   * o avoid reload error: location.item become null when the user
+   * To avoid reload error: location.item become null when the user
    * inadvertantly reload the bage which cause a bug.
    */
   const item = location.item ? location.item : JSON.parse(localStorage.getItem("item"));

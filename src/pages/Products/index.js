@@ -17,7 +17,7 @@ const Products = () => {
             return el.type === id;
           })
           .map((item, index) => {
-            return <Item key={item.id} item={item} />;
+            return <Item key={item._id} item={item} />;
           })}
       </div>
     </div>

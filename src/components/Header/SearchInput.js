@@ -59,7 +59,11 @@ const SearchInput = () => {
       {searchData.length !== 0 && (
         <div className="searchResult">
           {searchData.map((el, index) => {
-            return <p onClick={() => handleClick(el.id, el)}>{el.name}</p>;
+            return (
+              <p key={el._id} onClick={() => handleClick(el._id, el)}>
+                {el.name}
+              </p>
+            );
           })}
         </div>
       )}
