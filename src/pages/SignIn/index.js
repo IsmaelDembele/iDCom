@@ -4,8 +4,10 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
-const passwordLength = 8;
+// const passwordLength = 8;
+const passwordLength = 5;
 
 const SignIn = () => {
   const [emailChecker, setEmailChecker] = useState(false);
@@ -15,15 +17,49 @@ const SignIn = () => {
 
   const handleChangeEmail = e => {
     const value = e.target.value;
-    const test = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value);
-    setEmailChecker(test);
+    const test = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || value === "";
+    setEmailChecker(!test);
     setEmail(value);
   };
   const handleChangePwd = e => {
     const value = e.target.value;
-    const test = value.length >= passwordLength;
-    setPwdChecker(test);
+    const test = value.length >= passwordLength || value === "";
+    setPwdChecker(!test);
     setPwd(value);
+  };
+
+  const handleClick = e => {
+    e.preventDefault();
+    let test = true;
+
+    if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      test = false;
+      setEmailChecker(true);
+    }
+
+    if (pwd.length < passwordLength) {
+      test = false;
+      setPwdChecker(true);
+    }
+
+    if (!test) {
+      console.log(`error ${test}`);
+      return;
+    }
+
+    axios
+      .post("http://localhost:5000/sign", {
+        email: email,
+        password: pwd,
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+    console.log(email, pwd);
   };
 
   return (
@@ -42,7 +78,7 @@ const SignIn = () => {
             type="email"
             onChange={e => handleChangeEmail(e)}
             value={email}
-            error={email !== "" && !emailChecker}
+            error={emailChecker}
           />
           <TextField
             label="Password"
@@ -52,10 +88,15 @@ const SignIn = () => {
             type="password"
             onChange={e => handleChangePwd(e)}
             value={pwd}
-            error={pwd !== "" && !pwdChecker}
+            error={pwdChecker}
           />
           <p className="sign-in__text-password">Forgot your password</p>
-          <Button variant="contained" color="primary" className="btn-regular">
+          <Button
+            variant="contained"
+            color="primary"
+            className="btn-regular"
+            onClick={e => handleClick(e)}
+          >
             Sign in
           </Button>
         </form>
@@ -107,7 +148,7 @@ const SignIn = () => {
         </div>
 
         <div className="sign-in__create-account">
-          Don't have an account?
+          Don't have an account?&nbsp;
           <Link to="/register" style={{ color: "blue" }}>
             Create an account
           </Link>

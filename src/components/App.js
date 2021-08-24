@@ -12,18 +12,16 @@ import SignIn from "../pages/SignIn";
 import Register from "../pages/Register";
 
 import { myContext } from "../Helper/context";
+import { useFetch } from "../Helper/useFetch";
 
 const App = () => {
   const [myCart, setMyCart] = useState([]);
   const [myData, setMyData] = useState([]);
+  const { loading, products } = useFetch("http://localhost:5000/products");
 
   useEffect(() => {
-    Axios.get("http://localhost:5000/index")
-      .then(response => {
-        setMyData(response.data);
-      })
-      .catch(err => console.log(err));
-  }, []);
+    setMyData(products);
+  }, [products]);
 
   useEffect(() => {
     //=> So that the number of item inside the shopping cart appers everywhere

@@ -3,8 +3,11 @@ import Logo from "../../assets/logo.jpg";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-const passwordLength = 8;
+// const passwordLength = 8;
+const passwordLength = 5;
+const nameLenght = 4;
 
 const Register = () => {
   const [fullnameChecker, setFullNameChecker] = useState(false);
@@ -19,28 +22,74 @@ const Register = () => {
 
   const handleChangeFullName = e => {
     const value = e.target.value;
-    const test = value.length > 3;
-
-    setFullNameChecker(test);
+    const test = value.length < nameLenght && value !== "";
     setFullName(value);
+    setFullNameChecker(test);
   };
   const handleChangeEmail = e => {
     const value = e.target.value;
-    const test = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value);
-    setEmailChecker(test);
+    const test = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || value === "";
+    setEmailChecker(!test);
     setEmail(value);
   };
   const handleChangePwd = e => {
     const value = e.target.value;
-    const test = value.length >= passwordLength;
-    setPwdChecker(test);
+    const test = value.length >= passwordLength || value === "";
+    setPwdChecker(!test);
     setPwd(value);
   };
   const handleChangePwdConf = e => {
     const value = e.target.value;
-    const test = value === pwd;
-    setPwdConfChecker(test);
+    const test = value === pwd || value === "";
+    setPwdConfChecker(!test);
     setPwdConf(value);
+  };
+
+  const handleClick = e => {
+    e.preventDefault();
+    let test = true;
+    if (fullName.length < nameLenght) {
+      test = false;
+      setFullNameChecker(true);
+    }
+
+    if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      test = false;
+      setEmailChecker(true);
+    }
+
+    if (pwd.length < passwordLength) {
+      test = false;
+      setPwdChecker(true);
+    }
+
+    if (pwd !== pwdConf) {
+      setPwdConfChecker(true);
+      test = false;
+    }
+
+    if (!test) {
+      console.log(`error ${test}`);
+      return;
+    }
+
+    axios
+      .post("http://localhost:5000/register", {
+        fullname: fullName,
+        email: email,
+        password: pwd,
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    setFullName("");
+    setEmail("");
+    setPwd("");
+    setPwdConf("");
+    console.log(fullName, email, pwd, pwdConf);
   };
 
   return (
@@ -60,7 +109,7 @@ const Register = () => {
             type="text"
             onChange={e => handleChangeFullName(e)}
             value={fullName}
-            error={fullName !== "" && !fullnameChecker}
+            error={fullnameChecker}
           />
           <TextField
             label="Email"
@@ -70,7 +119,7 @@ const Register = () => {
             type="email"
             onChange={e => handleChangeEmail(e)}
             value={email}
-            error={email !== "" && !emailChecker}
+            error={emailChecker}
           />
           <TextField
             label="Password"
@@ -80,7 +129,7 @@ const Register = () => {
             type="password"
             onChange={e => handleChangePwd(e)}
             value={pwd}
-            error={pwd !== "" && !pwdChecker}
+            error={pwdChecker}
           />
 
           <TextField
@@ -91,11 +140,17 @@ const Register = () => {
             type="password"
             onChange={e => handleChangePwdConf(e)}
             value={pwdConf}
-            error={pwdConf !== "" && !pwdConfChecker}
+            // error={pwdConf !== "" && !pwdConfChecker}
+            error={pwdConfChecker}
           />
           <p className="register__text-password">Passwords must be at least 8 characters.</p>
 
-          <Button variant="contained" color="primary" className="btn-regular">
+          <Button
+            variant="contained"
+            color="primary"
+            className="btn-regular"
+            onClick={e => handleClick(e)}
+          >
             Create your account
           </Button>
         </form>
