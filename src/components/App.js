@@ -10,13 +10,14 @@ import ItemReview from "../pages/ItemReview";
 import ShoppingCart from "../pages/ShoppingCart";
 import SignIn from "../pages/SignIn";
 import Register from "../pages/Register";
+import Account from "../pages/Account";
+import { ProtectedRoute } from "./Protected";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { myContext } from "../Helper/context";
 import { useFetch } from "../Helper/useFetch";
-import axios from 'axios';
-
+import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
@@ -28,13 +29,13 @@ const App = () => {
   // const {products: status} = useFetch("http://localhost:5000/sign");
 
   useEffect(() => {
-    console.log('loop test');
+    console.log("loop test");
     // setIsLoggin(status);
     setMyData(products);
   }, [products]);
-  
+
   useEffect(() => {
-    console.log('user is loggin is '+isLoggin);
+    console.log("user is loggin is " + isLoggin);
     //=> So that the number of item inside the shopping cart appers everywhere
     const cart = JSON.parse(localStorage.getItem("myCart"));
     cart && setMyCart(cart);
@@ -59,8 +60,8 @@ const App = () => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%,-50%)",
-                zIndex: '10000',
-                color: 'blue'
+                zIndex: "10000",
+                color: "blue",
               }}
             />
           )}
@@ -77,6 +78,7 @@ const App = () => {
             <Route exact path="/register">
               <Register />
             </Route>
+            <ProtectedRoute exact path="/account" component={Account} />
 
             <Route exact path="/search/:id">
               <SearchPage />

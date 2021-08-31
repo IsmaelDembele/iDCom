@@ -1,0 +1,18 @@
+.account {
+  min-height: calc(100vh - 27rem); // header is 12rem footer is 15rem
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, #fff, $secondary, $primary);
+
+  &__text {
+    height: 20rem;
+    width: 40rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: $shadow;
+    line-height: 2;
+    // color: ;
+  }
+}

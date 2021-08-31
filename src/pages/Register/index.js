@@ -10,6 +10,7 @@ import axios from "axios";
 import Logo from "../../assets/logo.jpg";
 import { Alert } from "../../Helper/function";
 
+
 // const passwordLength = 8;
 const passwordLength = 5;
 const nameLenght = 4;
@@ -21,10 +22,10 @@ const Register = () => {
   const [pwdConfChecker, setPwdConfChecker] = useState(false);
   const [snackbarState, setSnackbarState] = useState(false);
 
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [pwd, setPwd] = useState("");
-  const [pwdConf, setPwdConf] = useState("");
+  const [fullName, setFullName] = useState("rere4");
+  const [email, setEmail] = useState("rjh@rrlkdr.co");
+  const [pwd, setPwd] = useState("12345");
+  const [pwdConf, setPwdConf] = useState("12345");
 
   const history = useHistory();
 

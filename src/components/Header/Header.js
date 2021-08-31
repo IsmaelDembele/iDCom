@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
@@ -9,13 +9,14 @@ import SearchInput from "./SearchInput";
 import Logo from "../../assets/logo.jpg";
 import { myContext } from "../../Helper/context";
 import { numeral_totalQuantity } from "../../Helper/function";
-import { useFetch } from "../../Helper/useFetch";
+// import { useFetch } from "../../Helper/useFetch";
 import axios from "axios";
 
 const Header = () => {
   const [cartItemNumber, setCartItemNumer] = useState(0);
   const { myCart, isLoggin, setIsLoggin } = useContext(myContext);
-  const { products: status } = useFetch("http://localhost:5000/sign");
+  // const { products: status } = useFetch("http://localhost:5000/sign");
+  const history = useHistory();
 
   useEffect(() => {
     const _itemNumber = numeral_totalQuantity(myCart);
@@ -35,6 +36,22 @@ const Header = () => {
       });
   };
 
+  const signOut = () => {
+    axios
+      .post("http://localhost:5000/sign-out")
+      .then(res => {
+        if (res.data === "OK" && res.status === 200) {
+          setIsLoggin(false);
+          history.push('/');
+          console.log("user logged out");
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+  };
+
   return (
     <header className="header" onLoad={checkloggin()}>
       <div className="navbar">
@@ -46,7 +63,7 @@ const Header = () => {
 
         {!isLoggin && (
           <div className="navbar__sign-in">
-            <Link to="/sign">sing in</Link>
+            <Link to="/sign">sign in</Link>
           </div>
         )}
 
@@ -56,15 +73,13 @@ const Header = () => {
           </div>
         )}
         {isLoggin && (
-          <div className="navbar__sign-in">
-            <Link to="/my-account">My Account</Link>
-          </div>
+          <Link to="/account">
+            <div className="navbar__my-account">My Account</div>
+          </Link>
         )}
 
         {isLoggin && (
-          <div className="navbar__register">
-            <Link to="/sign-out">Sign out</Link>
-          </div>
+            <div className="navbar__sign-out" onClick={()=>signOut()}>Sign out</div>
         )}
 
         <div className="cart">
