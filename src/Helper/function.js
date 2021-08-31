@@ -1,6 +1,11 @@
 import numeral from "numeral";
+import MuiAlert from "@material-ui/lab/Alert";
 
-export const addToCart = (item,myCart,setMyCart,history) => {
+export const Alert = props => {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+};
+
+export const addToCart = (item, myCart, setMyCart, history) => {
   let find = false;
   let newCart = myCart;
 
@@ -19,7 +24,7 @@ export const addToCart = (item,myCart,setMyCart,history) => {
     find = true;
   }
 
-  find && history.push('/shopping');
+  find && history.push("/shopping");
 };
 
 export const numeral_totalPrice = myArray => {
@@ -32,7 +37,7 @@ export const numeral_totalPrice = myArray => {
   return myTotal;
 };
 
-export const number_to_money = (number) => {
+export const number_to_money = number => {
   //put number to money-string 9100.21 -> '$9,100.21'
   const money = numeral(number).format("$0,0.00");
   return money;
@@ -41,7 +46,7 @@ export const number_to_money = (number) => {
 export const numeral_totalQuantity = myArray => {
   let total = 0;
   myArray.forEach(el => {
-    total +=parseInt(el.qty) ;
+    total += parseInt(el.qty);
   });
   return total;
 };
@@ -49,8 +54,7 @@ export const numeral_totalQuantity = myArray => {
 export const myIndex = (id, myArray) => {
   let index;
   myArray.forEach((el, i) => {
-    if(el._id === id)
-    index = i;
+    if (el._id === id) index = i;
   });
 
   return index;

@@ -9,18 +9,34 @@ import SearchInput from "./SearchInput";
 import Logo from "../../assets/logo.jpg";
 import { myContext } from "../../Helper/context";
 import { numeral_totalQuantity } from "../../Helper/function";
+import { useFetch } from "../../Helper/useFetch";
+import axios from "axios";
 
 const Header = () => {
   const [cartItemNumber, setCartItemNumer] = useState(0);
-  const { myCart } = useContext(myContext);
+  const { myCart, isLoggin, setIsLoggin } = useContext(myContext);
+  const { products: status } = useFetch("http://localhost:5000/sign");
 
   useEffect(() => {
     const _itemNumber = numeral_totalQuantity(myCart);
     setCartItemNumer(_itemNumber);
   }, [myCart]);
 
+  const checkloggin = () => {
+    axios
+      .get("http://localhost:5000/sign")
+      .then(res => {
+        console.log("res.data " + res.data);
+        setIsLoggin(res.data);
+      })
+      .catch(err => {
+        console.log("res.data " + false);
+        setIsLoggin(false);
+      });
+  };
+
   return (
-    <header className="header">
+    <header className="header" onLoad={checkloggin()}>
       <div className="navbar">
         <Link to="/">
           <img src={Logo} alt="logo" className="logo" />
@@ -28,13 +44,28 @@ const Header = () => {
 
         <SearchInput />
 
-        <div className="navbar__sign-in">
-          <Link to="/sign">sing in</Link>
-        </div>
+        {!isLoggin && (
+          <div className="navbar__sign-in">
+            <Link to="/sign">sing in</Link>
+          </div>
+        )}
 
-        <div className="navbar__register">
-          <Link to="/register">register</Link>
-        </div>
+        {!isLoggin && (
+          <div className="navbar__register">
+            <Link to="/register">register</Link>
+          </div>
+        )}
+        {isLoggin && (
+          <div className="navbar__sign-in">
+            <Link to="/my-account">My Account</Link>
+          </div>
+        )}
+
+        {isLoggin && (
+          <div className="navbar__register">
+            <Link to="/sign-out">Sign out</Link>
+          </div>
+        )}
 
         <div className="cart">
           <Link to="/shopping">

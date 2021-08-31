@@ -11,6 +11,7 @@ export const useFetch = (url, arg = {}) => {
     const products = await response.data;
     setProducts(products);
     setLoading(false);
+    // eslint-disable-next-line
   }, [url]);
 
   useEffect(() => {

@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import Logo from "../../assets/logo.jpg";
+
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
+import Snackbar from "@material-ui/core/Snackbar";
+
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
+
+import Logo from "../../assets/logo.jpg";
+import { Alert } from "../../Helper/function";
 
 // const passwordLength = 8;
 const passwordLength = 5;
@@ -14,11 +19,14 @@ const Register = () => {
   const [emailChecker, setEmailChecker] = useState(false);
   const [pwdChecker, setPwdChecker] = useState(false);
   const [pwdConfChecker, setPwdConfChecker] = useState(false);
+  const [snackbarState, setSnackbarState] = useState(false);
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [pwdConf, setPwdConf] = useState("");
+
+  const history = useHistory();
 
   const handleChangeFullName = e => {
     const value = e.target.value;
@@ -72,7 +80,7 @@ const Register = () => {
       console.log(`error ${test}`);
       return;
     }
-
+    // axios.defaults.withCredentials = true;
     axios
       .post("http://localhost:5000/register", {
         fullname: fullName,
@@ -80,16 +88,33 @@ const Register = () => {
         password: pwd,
       })
       .then(response => {
-        console.log(response);
+        console.log(response.data);
+
+        if (response.data === "account created") {
+          //show confirmation message
+          setSnackbarState(true);
+        }
       })
       .catch(error => {
-        console.log(error);
+        console.log(`error while fetching data ${error}`);
       });
+
     setFullName("");
     setEmail("");
     setPwd("");
     setPwdConf("");
-    console.log(fullName, email, pwd, pwdConf);
+
+    
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setSnackbarState(false);
+    // redirect to landing page
+    history.push("/");
   };
 
   return (
@@ -144,6 +169,12 @@ const Register = () => {
             error={pwdConfChecker}
           />
           <p className="register__text-password">Passwords must be at least 8 characters.</p>
+
+          <Snackbar open={snackbarState} autoHideDuration={6000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success">
+              Account created successfully!!
+            </Alert>
+          </Snackbar>
 
           <Button
             variant="contained"

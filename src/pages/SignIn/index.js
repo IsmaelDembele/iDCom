@@ -1,10 +1,12 @@
-import React from "react";
-import Logo from "../../assets/logo.jpg";
+import React, { useState } from "react";
+
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
+
+import Logo from "../../assets/logo.jpg";
 
 // const passwordLength = 8;
 const passwordLength = 5;
@@ -12,8 +14,10 @@ const passwordLength = 5;
 const SignIn = () => {
   const [emailChecker, setEmailChecker] = useState(false);
   const [pwdChecker, setPwdChecker] = useState(false);
-  const [email, setEmail] = useState("");
-  const [pwd, setPwd] = useState("");
+  const [email, setEmail] = useState("dembele@gmail.com");
+  const [pwd, setPwd] = useState("12345");
+  const history = useHistory();
+  const [errorMsg, setErrorMsg] = useState(false);
 
   const handleChangeEmail = e => {
     const value = e.target.value;
@@ -30,6 +34,8 @@ const SignIn = () => {
 
   const handleClick = e => {
     e.preventDefault();
+    errorMsg && setErrorMsg(false);
+
     let test = true;
 
     if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
@@ -46,14 +52,27 @@ const SignIn = () => {
       console.log(`error ${test}`);
       return;
     }
-
+    // axios.defaults.withCredentials = true;
     axios
       .post("http://localhost:5000/sign", {
         email: email,
         password: pwd,
       })
       .then(response => {
+        const { status } = response.data;
+
         console.log(response);
+        if (response.data === "OK" && response.status === 200) {
+          console.log("connected successfully");
+          setEmail("");
+          setPwd("");
+          history.push("/");
+          // console.log(token);
+        } else {
+          setErrorMsg(true);
+          return;
+          // return history.push("/sign");
+        }
       })
       .catch(error => {
         console.log(error);
@@ -68,7 +87,7 @@ const SignIn = () => {
         <img src={Logo} alt="logo" className="sign-in__logo" />
       </Link>
       <div className="sign-in__container">
-        <form action="#" className="sign-in__form">
+        <form action="#" method="post" className="sign-in__form">
           <p className="sign-in__text">Sign-in to iDCom</p>
           <TextField
             label="Email"
@@ -91,6 +110,7 @@ const SignIn = () => {
             error={pwdChecker}
           />
           <p className="sign-in__text-password">Forgot your password</p>
+          {errorMsg && <p className="sign-in__error-msg">Invalid user/password</p>}
           <Button
             variant="contained"
             color="primary"

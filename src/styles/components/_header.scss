@@ -97,6 +97,8 @@
     width: 83.5%;
   }
 
+  &__my-account,
+  &__sign-out,
   &__sign-in,
   &__register {
     text-align: center;
@@ -106,6 +108,11 @@
     cursor: pointer;
 
     @include header-item-hover;
+  }
+
+  &__my-account,
+  &__sign-out{
+    width: 5rem;
   }
 
   .cart {
