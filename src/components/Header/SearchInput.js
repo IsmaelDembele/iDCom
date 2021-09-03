@@ -19,13 +19,18 @@ const SearchInput = () => {
 
   const handleChange = e => {
     const _item = e.target.value;
+    const trimmedItem = _item.trim();
+    let newFilter = [];
     setSearchItem(_item);
 
-    const newFilter = myData.filter(value => {
-      return value.description.toLowerCase().includes(_item.toLowerCase());
-    });
+    //making sure the item is not compose of white space only
+    if (trimmedItem.length > 0) {
+      newFilter = myData.filter(value => {
+        return value.description.toLowerCase().includes(_item.toLowerCase());
+      });
+    }
 
-    if (_item === "") {
+    if (trimmedItem === "") {
       setSearchData([]);
     } else {
       setSearchData(newFilter);

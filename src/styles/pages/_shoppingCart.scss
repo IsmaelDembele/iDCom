@@ -3,7 +3,7 @@
   display: grid;
   background-image: linear-gradient(to bottom,$primary, $secondary);
 
-  min-height: calc(100vh - 27rem);
+  min-height: $min__body__height;
 
   grid-template-columns: 1fr 32rem;
   column-gap: 2rem;

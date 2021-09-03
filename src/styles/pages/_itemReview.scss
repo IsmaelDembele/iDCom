@@ -3,7 +3,7 @@
   display: grid;
 
   grid-template-columns: 6rem 40rem 1fr 1fr;
-  min-height: calc(100vh - 27rem); // header is 12rem footer is 15rem
+  min-height: $min__body__height;
 
   column-gap: 5rem;
   &__list-thumbnail {

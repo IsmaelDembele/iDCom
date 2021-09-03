@@ -16,13 +16,14 @@ const ItemReview = () => {
   const { myCart, setMyCart } = useContext(myContext);
   const [displayImage, setDisplayImage] = useState(item.url);
   const [isActive, setIsActive] = useState(true);
+  const activeColor = "#0984e3";
 
   useEffect(() => {
     localStorage.setItem("item", JSON.stringify(item));
-
     setDisplayImage(item.url);
     setIsActive(true);
-  }, [item]);
+    // eslint-disable-next-line 
+  }, []);
 
   const handleMousehover = (img, bool) => {
     setDisplayImage(img);
@@ -34,16 +35,16 @@ const ItemReview = () => {
       <div className="itemReview__list-thumbnail">
         <div
           className="itemReview__thumbnail"
-          onMouseOver={() => handleMousehover(item?.url, true)}
-          style={{ border: isActive ? "1px solid #0984e3" : "1px solid black" }}
+          onMouseOver={() => handleMousehover(item.url, true)}
+          style={{ border: isActive ? `1px solid ${activeColor}` : "1px solid black" }}
         >
           {item !== null && <img src={item?.url} alt={`thumbnail ${item?.name}`} />}
         </div>
         {item.url2 && (
           <div
             className="itemReview__thumbnail"
-            onMouseOver={() => handleMousehover(item?.url2, false)}
-            style={{ border: isActive ? "1px solid black" : "1px solid #0984e3" }}
+            onMouseOver={() => handleMousehover(item.url2, false)}
+            style={{ border: isActive ? "1px solid black" : `1px solid ${activeColor}` }}
           >
             <img src={item?.url2} alt={`thumbnail ${item?.name}`} />
           </div>

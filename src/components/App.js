@@ -26,20 +26,15 @@ const App = () => {
   const [myData, setMyData] = useState([]);
   const [isLoggin, setIsLoggin] = useState(false);
   const { loading, products } = useFetch("http://localhost:5000/products");
-  // const {products: status} = useFetch("http://localhost:5000/sign");
 
   useEffect(() => {
-    console.log("loop test");
-    // setIsLoggin(status);
     setMyData(products);
   }, [products]);
 
   useEffect(() => {
-    console.log("user is loggin is " + isLoggin);
     //=> So that the number of item inside the shopping cart appers everywhere
     const cart = JSON.parse(localStorage.getItem("myCart"));
     cart && setMyCart(cart);
-    // setIsLoggin(status);
   }, []);
 
   return (
@@ -47,24 +42,14 @@ const App = () => {
       <div className="layout">
         <Router>
           <Route
+            //the header is not display on the sign and register page
             path="*"
             render={props =>
               props.location.pathname !== "/sign" &&
               props.location.pathname !== "/register" && <Header />
             }
           />
-          {loading && (
-            <CircularProgress
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%,-50%)",
-                zIndex: "10000",
-                color: "blue",
-              }}
-            />
-          )}
+          {loading && <CircularProgress className="circular-progress" />}
           <Switch>
             <Route exact path="/">
               <LandingPage />

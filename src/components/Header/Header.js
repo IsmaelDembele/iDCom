@@ -8,18 +8,16 @@ import HomeIcon from "@material-ui/icons/Home";
 import SearchInput from "./SearchInput";
 import Logo from "../../assets/logo.jpg";
 import { myContext } from "../../Helper/context";
-import { numeral_totalQuantity } from "../../Helper/function";
-// import { useFetch } from "../../Helper/useFetch";
+import { totalQuantity } from "../../Helper/function";
 import axios from "axios";
 
 const Header = () => {
   const [cartItemNumber, setCartItemNumer] = useState(0);
   const { myCart, isLoggin, setIsLoggin } = useContext(myContext);
-  // const { products: status } = useFetch("http://localhost:5000/sign");
   const history = useHistory();
 
   useEffect(() => {
-    const _itemNumber = numeral_totalQuantity(myCart);
+    const _itemNumber = totalQuantity(myCart);
     setCartItemNumer(_itemNumber);
   }, [myCart]);
 
@@ -27,7 +25,6 @@ const Header = () => {
     axios
       .get("http://localhost:5000/sign")
       .then(res => {
-        console.log("res.data " + res.data);
         setIsLoggin(res.data);
       })
       .catch(err => {
@@ -42,14 +39,13 @@ const Header = () => {
       .then(res => {
         if (res.data === "OK" && res.status === 200) {
           setIsLoggin(false);
-          history.push('/');
+          history.push("/");
           console.log("user logged out");
         }
       })
       .catch(err => {
         console.log(err);
       });
-
   };
 
   return (
@@ -62,15 +58,15 @@ const Header = () => {
         <SearchInput />
 
         {!isLoggin && (
-          <div className="navbar__sign-in">
-            <Link to="/sign">sign in</Link>
-          </div>
+          <Link to="/sign">
+            <div className="navbar__sign-in">sign in</div>
+          </Link>
         )}
 
         {!isLoggin && (
-          <div className="navbar__register">
-            <Link to="/register">register</Link>
-          </div>
+          <Link to="/register">
+            <div className="navbar__register">register</div>
+          </Link>
         )}
         {isLoggin && (
           <Link to="/account">
@@ -79,7 +75,9 @@ const Header = () => {
         )}
 
         {isLoggin && (
-            <div className="navbar__sign-out" onClick={()=>signOut()}>Sign out</div>
+          <div className="navbar__sign-out" onClick={() => signOut()}>
+            Sign out
+          </div>
         )}
 
         <div className="cart">

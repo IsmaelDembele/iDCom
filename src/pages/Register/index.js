@@ -9,7 +9,7 @@ import axios from "axios";
 
 import Logo from "../../assets/logo.jpg";
 import { Alert } from "../../Helper/function";
-
+import GoogleButton from "../../components/GoogleButton.js";
 
 // const passwordLength = 8;
 const passwordLength = 5;
@@ -22,10 +22,10 @@ const Register = () => {
   const [pwdConfChecker, setPwdConfChecker] = useState(false);
   const [snackbarState, setSnackbarState] = useState(false);
 
-  const [fullName, setFullName] = useState("rere4");
-  const [email, setEmail] = useState("rjh@rrlkdr.co");
-  const [pwd, setPwd] = useState("12345");
-  const [pwdConf, setPwdConf] = useState("12345");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [pwd, setPwd] = useState("");
+  const [pwdConf, setPwdConf] = useState("");
 
   const history = useHistory();
 
@@ -54,7 +54,7 @@ const Register = () => {
     setPwdConf(value);
   };
 
-  const handleClick = e => {
+  const handleCreateAccount = e => {
     e.preventDefault();
     let test = true;
     if (fullName.length < nameLenght) {
@@ -81,7 +81,7 @@ const Register = () => {
       console.log(`error ${test}`);
       return;
     }
-    // axios.defaults.withCredentials = true;
+    //axios are with crendential defined in App.js
     axios
       .post("http://localhost:5000/register", {
         fullname: fullName,
@@ -104,15 +104,12 @@ const Register = () => {
     setEmail("");
     setPwd("");
     setPwdConf("");
-
-    
   };
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-
     setSnackbarState(false);
     // redirect to landing page
     history.push("/");
@@ -166,7 +163,6 @@ const Register = () => {
             type="password"
             onChange={e => handleChangePwdConf(e)}
             value={pwdConf}
-            // error={pwdConf !== "" && !pwdConfChecker}
             error={pwdConfChecker}
           />
           <p className="register__text-password">Passwords must be at least 8 characters.</p>
@@ -181,7 +177,7 @@ const Register = () => {
             variant="contained"
             color="primary"
             className="btn-regular"
-            onClick={e => handleClick(e)}
+            onClick={e => handleCreateAccount(e)}
           >
             Create your account
           </Button>
@@ -193,39 +189,7 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="btn-google">
-          <div className="btn-google__icon">
-            <svg
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="18px"
-              height="18px"
-              viewBox="0 0 48 48"
-              className="abcRioButtonSvg"
-            >
-              <g>
-                <path
-                  fill="#EA4335"
-                  d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
-                ></path>
-                <path
-                  fill="#4285F4"
-                  d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
-                ></path>
-                <path
-                  fill="#FBBC05"
-                  d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
-                ></path>
-                <path
-                  fill="#34A853"
-                  d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
-                ></path>
-                <path fill="none" d="M0 0h48v48H0z"></path>
-              </g>
-            </svg>
-          </div>
-          <p className="btn-google__text">Sign up with Google</p>
-        </div>
+        <GoogleButton />
 
         <div className="register__separator">
           <div className="register__separator__line">

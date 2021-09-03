@@ -1,11 +1,9 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { myContext } from "../Helper/context";
 
-// import auth from "./auth";
-
 export const ProtectedRoute = ({ component: Component, ...rest }) => {
-  const { isLoggin} = useContext(myContext);
+  const { isLoggin } = useContext(myContext);
 
   return (
     <Route

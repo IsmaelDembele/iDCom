@@ -1,5 +1,5 @@
 .account {
-  min-height: calc(100vh - 27rem); // header is 12rem footer is 15rem
+  min-height: $min__body__height;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +13,12 @@
     border-radius: 3px;
     box-shadow: $shadow;
     line-height: 2;
-    // color: ;
+  }
+
+  &__delete{
+    margin-top: 2.5rem;
+    color: $primary;
+    text-align: center;
+    cursor: pointer;
   }
 }

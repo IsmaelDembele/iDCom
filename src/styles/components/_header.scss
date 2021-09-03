@@ -113,12 +113,11 @@
   &__my-account,
   &__sign-out{
     width: 10rem;
-    // height: 100%;
   }
 
   .cart {
     cursor: pointer;
-
+    //shopping cart item 
     .MuiBadge-badge {
       background-color: #1e3a8a;
       font-size: 1.4rem;

@@ -30,7 +30,7 @@ export const addToCart = (item, myCart, setMyCart, history) => {
 export const numeral_totalPrice = myArray => {
   let myTotal = 0;
   myArray.forEach(item => {
-    //put string-money to number '$100.45' -> 100.45
+    //put money to number '$100.45' -> 100.45
     const currentTotal = numeral(item.price);
     myTotal += currentTotal._value * item.qty;
   });
@@ -38,12 +38,12 @@ export const numeral_totalPrice = myArray => {
 };
 
 export const number_to_money = number => {
-  //put number to money-string 9100.21 -> '$9,100.21'
+  //put number to money: ie 9100.21 -> '$9,100.21'
   const money = numeral(number).format("$0,0.00");
   return money;
 };
 
-export const numeral_totalQuantity = myArray => {
+export const totalQuantity = myArray => {
   let total = 0;
   myArray.forEach(el => {
     total += parseInt(el.qty);
@@ -51,6 +51,7 @@ export const numeral_totalQuantity = myArray => {
   return total;
 };
 
+//Taken and id and return the position of the item it belongs to inside an array of item
 export const myIndex = (id, myArray) => {
   let index;
   myArray.forEach((el, i) => {

@@ -4,7 +4,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 
 import { myContext } from "../../Helper/context";
-import {myIndex} from "../../Helper/function";
+import { myIndex } from "../../Helper/function";
 
 const Item = React.memo(props => {
   const { _id, url, name, price, qty } = props.item;
@@ -66,7 +66,5 @@ const Item = React.memo(props => {
     </div>
   );
 });
-
-
 
 export default Item;

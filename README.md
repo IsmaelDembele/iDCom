@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You will need a google client ID in order to use logge in with google functionality.
+
+
 
 ## Available Scripts
 
