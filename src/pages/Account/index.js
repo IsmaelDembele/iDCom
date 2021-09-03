@@ -5,14 +5,15 @@ import { useHistory } from "react-router-dom";
 
 const Account = () => {
   const [user, setUser] = useState({});
-  const { isLoggin, setIsLoggin } = useContext(myContext);
+  const { isLoggin, setIsLoggin, path } = useContext(myContext);
   const history = useHistory();
+
 
   useEffect(() => {
     console.log('test');
     if (isLoggin) {
       axios
-        .get("http://localhost:5000/account")
+        .get(`${path}/account`)
         .then(res => {
           if (res.data.myStatus === "OK") {
             const { userID, name, email } = res.data;
@@ -27,7 +28,7 @@ const Account = () => {
   }, [isLoggin,history]);
 
   const handleDelete = () => {
-    axios.post("http://localhost:5000/delete").then(res => {
+    axios.post(`${path}/delete`).then(res => {
       if (res.data === "OK") {
         setIsLoggin(false);
         setUser({});

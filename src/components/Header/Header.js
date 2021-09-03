@@ -13,7 +13,7 @@ import axios from "axios";
 
 const Header = () => {
   const [cartItemNumber, setCartItemNumer] = useState(0);
-  const { myCart, isLoggin, setIsLoggin } = useContext(myContext);
+  const { myCart, isLoggin, setIsLoggin, path } = useContext(myContext);
   const history = useHistory();
 
   useEffect(() => {
@@ -23,8 +23,9 @@ const Header = () => {
 
   const checkloggin = () => {
     axios
-      .get("http://localhost:5000/sign")
+      .get(`${path}/sign`)
       .then(res => {
+        console.log('loggin value res.data',res.data);
         setIsLoggin(res.data);
       })
       .catch(err => {
@@ -35,7 +36,7 @@ const Header = () => {
 
   const signOut = () => {
     axios
-      .post("http://localhost:5000/sign-out")
+      .post(`{path}/sign-out`)
       .then(res => {
         if (res.data === "OK" && res.status === 200) {
           setIsLoggin(false);

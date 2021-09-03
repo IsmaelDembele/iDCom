@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 
 import { Link, useHistory } from "react-router-dom";
+import { myContext } from "../../Helper/context";
+
 import axios from "axios";
 
 import Logo from "../../assets/logo.jpg";
@@ -26,6 +28,8 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [pwdConf, setPwdConf] = useState("");
+  const { path } = useContext(myContext);
+
 
   const history = useHistory();
 
@@ -83,7 +87,7 @@ const Register = () => {
     }
     //axios are with crendential defined in App.js
     axios
-      .post("http://localhost:5000/register", {
+      .post(`${path}/register`, {
         fullname: fullName,
         email: email,
         password: pwd,

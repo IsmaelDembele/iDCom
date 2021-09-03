@@ -21,11 +21,13 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
+const path = "https://idcom-server.herokuapp.com";
+
 const App = () => {
   const [myCart, setMyCart] = useState([]);
   const [myData, setMyData] = useState([]);
   const [isLoggin, setIsLoggin] = useState(false);
-  const { loading, products } = useFetch("http://localhost:5000/products");
+  const { loading, products } = useFetch(`${path}/products`);
 
   useEffect(() => {
     setMyData(products);
@@ -38,7 +40,7 @@ const App = () => {
   }, []);
 
   return (
-    <myContext.Provider value={{ myCart, setMyCart, myData, isLoggin, setIsLoggin }}>
+    <myContext.Provider value={{ myCart, setMyCart, myData, isLoggin, setIsLoggin,path }}>
       <div className="layout">
         <Router>
           <Route

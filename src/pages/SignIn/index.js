@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 import { Link, useHistory } from "react-router-dom";
+import { myContext } from "../../Helper/context";
+
 import axios from "axios";
 
 import Logo from "../../assets/logo.jpg";
@@ -15,10 +17,11 @@ const passwordLength = 5;
 const SignIn = () => {
   const [emailChecker, setEmailChecker] = useState(false);
   const [pwdChecker, setPwdChecker] = useState(false);
-  const [email, setEmail] = useState("");
-  const [pwd, setPwd] = useState("");
+  const [email, setEmail] = useState("dembele@gmail.com");
+  const [pwd, setPwd] = useState("12345");
   const history = useHistory();
   const [errorMsg, setErrorMsg] = useState(false);
+  const { path } = useContext(myContext);
 
   const handleChangeEmail = e => {
     const value = e.target.value;
@@ -55,12 +58,11 @@ const SignIn = () => {
     }
     // axios send with credentials;
     axios
-      .post("http://localhost:5000/sign", {
+      .post(`${path}/sign`, {
         email: email,
         password: pwd,
       })
       .then(response => {
-
         console.log(response);
         if (response.data === "OK" && response.status === 200) {
           console.log("connected successfully");

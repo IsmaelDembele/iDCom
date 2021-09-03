@@ -1,14 +1,17 @@
-import React from "react";
+import React,{useContext} from "react";
 import GoogleLogin from "react-google-login";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { myContext } from "../../Helper/context";
 
 const GoogleButton = () => {
   const history = useHistory();
+  const { path } = useContext(myContext);
+
 
   const responseSuccessGoogle = response => {
     axios
-      .post("http://localhost:5000/googlelogin", { tokenId: response.tokenId })
+      .post(`${path}/googlelogin`, { tokenId: response.tokenId })
       .then(result => {
         if (result.data === "OK") {
           history.push("/");
@@ -21,7 +24,7 @@ const GoogleButton = () => {
   };
 
   const responseFailureGoogle = response => {
-    alert("Something went wrong: try again later");
+    alert('this page need Cookies for basic function');
   };
 
   return (
