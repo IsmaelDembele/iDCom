@@ -26,7 +26,7 @@ const Header = () => {
       .get(`${path}/sign`)
       .then(res => {
         console.log('loggin value res.data',res);
-        setIsLoggin(res.data);
+        setIsLoggin(res.data === true);
       })
       .catch(err => {
         console.log("res.data " + false);
