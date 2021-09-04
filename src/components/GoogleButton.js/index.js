@@ -24,7 +24,7 @@ const GoogleButton = () => {
   };
 
   const responseFailureGoogle = response => {
-    console.log('error setting cookies');
+    console.log('error setting cookies',response);
     return;
   };
 

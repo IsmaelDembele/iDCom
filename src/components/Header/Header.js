@@ -25,7 +25,7 @@ const Header = () => {
     axios
       .get(`${path}/sign`)
       .then(res => {
-        console.log('loggin value res.data',res.data);
+        console.log('loggin value res.data',res);
         setIsLoggin(res.data);
       })
       .catch(err => {
