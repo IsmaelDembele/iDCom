@@ -21,7 +21,7 @@ const Header = () => {
     setCartItemNumer(_itemNumber);
   }, [myCart]);
 
-  const checkloggin = () => {
+  useEffect(() => {
     axios
       .get(`${path}/sign`)
       .then(res => {
@@ -32,7 +32,7 @@ const Header = () => {
         console.log("res.data " + false);
         setIsLoggin(false);
       });
-  };
+    }, []);
 
   const signOut = () => {
     axios
@@ -50,7 +50,7 @@ const Header = () => {
   };
 
   return (
-    <header className="header" onLoad={checkloggin()}>
+    <header className="header">
       <div className="navbar">
         <Link to="/">
           <img src={Logo} alt="logo" className="logo" />
