@@ -24,7 +24,8 @@ const GoogleButton = () => {
   };
 
   const responseFailureGoogle = response => {
-    alert('this page need Cookies for basic function');
+    console.log('error setting cookies');
+    return;
   };
 
   return (
