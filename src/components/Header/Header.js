@@ -36,7 +36,7 @@ const Header = () => {
 
   const signOut = () => {
     axios
-      .post(`{path}/sign-out`)
+      .post(`${path}/sign-out`)
       .then(res => {
         if (res.data === "OK" && res.status === 200) {
           setIsLoggin(false);
