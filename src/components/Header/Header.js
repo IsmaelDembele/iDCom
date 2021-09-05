@@ -22,9 +22,9 @@ const Header = () => {
   }, [myCart]);
 
   useEffect(() => {
-    axios.defaults.withCredentials = true;
+    // axios.defaults.withCredentials = true;
     axios
-      .get(`${path}/sign`)
+      .get(`${path}/sign`,{withCredentials = true})
       .then(res => {
         console.log('loggin value res.data',res);
         setIsLoggin(res.data === true);
