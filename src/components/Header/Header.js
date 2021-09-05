@@ -24,7 +24,7 @@ const Header = () => {
   useEffect(() => {
     // axios.defaults.withCredentials = true;
     axios
-      .get(`${path}/sign`,{withCredentials = true})
+      .get(`${path}/sign`,{withCredentials: true})
       .then(res => {
         console.log('loggin value res.data',res);
         setIsLoggin(res.data === true);
