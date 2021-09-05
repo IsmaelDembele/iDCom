@@ -22,6 +22,7 @@ const Header = () => {
   }, [myCart]);
 
   useEffect(() => {
+    axios.defaults.withCredentials = true;
     axios
       .get(`${path}/sign`)
       .then(res => {
