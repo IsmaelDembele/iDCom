@@ -13,8 +13,8 @@ import Logo from "../../assets/logo.jpg";
 import { Alert } from "../../Helper/function";
 import GoogleButton from "../../components/GoogleButton.js";
 
-// const passwordLength = 8;
-const passwordLength = 5;
+const passwordLength = 8;
+// const passwordLength = 5;
 const nameLenght = 4;
 
 const Register = () => {

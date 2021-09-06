@@ -11,8 +11,8 @@ import axios from "axios";
 import Logo from "../../assets/logo.jpg";
 import GoogleButton from "../../components/GoogleButton.js";
 
-// const passwordLength = 8;
-const passwordLength = 5;
+const passwordLength = 8;
+// const passwordLength = 5;
 
 const SignIn = () => {
   const [emailChecker, setEmailChecker] = useState(false);
