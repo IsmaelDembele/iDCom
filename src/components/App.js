@@ -21,8 +21,8 @@ const { ProtectedRoute } = React.lazy(() => import("../pages/Account"));
 
 axios.defaults.withCredentials = true;
 
-// const path = "https://idcom-server.herokuapp.com";
-const path = "http://localhost:5000";
+const path = "https://idcom-server.herokuapp.com";
+// const path = "http://localhost:5000";
 
 const App = () => {
   const [myCart, setMyCart] = useState([]);
