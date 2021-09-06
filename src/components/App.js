@@ -21,7 +21,8 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-const path = "https://idcom-server.herokuapp.com";
+// const path = "https://idcom-server.herokuapp.com";
+const path = "http://localhost:5000";
 
 const App = () => {
   const [myCart, setMyCart] = useState([]);
@@ -40,7 +41,7 @@ const App = () => {
   }, []);
 
   return (
-    <myContext.Provider value={{ myCart, setMyCart, myData, isLoggin, setIsLoggin,path }}>
+    <myContext.Provider value={{ myCart, setMyCart, myData, isLoggin, setIsLoggin, path }}>
       <div className="layout">
         <Router>
           <Route
