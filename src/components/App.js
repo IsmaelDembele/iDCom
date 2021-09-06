@@ -1,23 +1,23 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import CircularProgress from "@material-ui/core/CircularProgress";
-
 import { myContext } from "../Helper/context";
 import { useFetch } from "../Helper/useFetch";
 import axios from "axios";
 
-const Header = React.lazy(() => import("./Header/Header"));
-const Footer = React.lazy(() => import("./Footer"));
-const LandingPage = React.lazy(() => import("../pages/LandingPage"));
+import CircularProgress from "@material-ui/core/CircularProgress";
+import LandingPage from "../pages/LandingPage";
+import Header from "./Header/Header";
+import Footer from "./Footer";
+import {ProtectedRoute } from "../components/Protected";
+
+const Account = React.lazy(() => import("../pages/Account"));
 const Products = React.lazy(() => import("../pages/Products"));
 const SearchPage = React.lazy(() => import("../pages/SearchPage"));
 const ItemReview = React.lazy(() => import("../pages/ItemReview"));
 const ShoppingCart = React.lazy(() => import("../pages/ShoppingCart"));
 const SignIn = React.lazy(() => import("../pages/SignIn"));
 const Register = React.lazy(() => import("../pages/Register"));
-const Account = React.lazy(() => import("../pages/Account"));
-const { ProtectedRoute } = React.lazy(() => import("../pages/Account"));
 
 axios.defaults.withCredentials = true;
 
@@ -42,7 +42,13 @@ const App = () => {
 
   return (
     <myContext.Provider value={{ myCart, setMyCart, myData, isLoggin, setIsLoggin, path }}>
-      <Suspense fallback={<div>"...loading"</div>}>
+      <Suspense
+        fallback={
+          <div>
+            <CircularProgress className="circular-progress" />
+          </div>
+        }
+      >
         <div className="layout">
           <Router>
             <Route

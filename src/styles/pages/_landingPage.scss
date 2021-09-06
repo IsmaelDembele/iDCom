@@ -4,6 +4,7 @@
 
   .title {
     background-image: linear-gradient(to right, #fff, $secondary, $primary);
+    // width: 100vh;
     .keen-slider__slide {
       overflow: hidden;
       color: $text__color;
