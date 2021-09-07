@@ -22,6 +22,7 @@ const Header = () => {
   }, [myCart]);
 
   useEffect(() => {
+    console.log('test');
     axios
       .get(`${path}/sign`)
       .then(res => {
@@ -31,7 +32,7 @@ const Header = () => {
         console.log(err);
         setIsLoggin(false);
       });
-    }, []);
+    }, [path, setIsLoggin]);
 
   const signOut = () => {
     axios

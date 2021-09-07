@@ -25,7 +25,7 @@ const Account = () => {
           history.push("/");
         });
     }
-  }, [isLoggin,history]);
+  }, [path,isLoggin,history]);
 
   const handleDelete = () => {
     axios.post(`${path}/delete`).then(res => {
