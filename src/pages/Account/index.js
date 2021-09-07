@@ -8,7 +8,6 @@ const Account = () => {
   const { isLoggin, setIsLoggin, path } = useContext(myContext);
   const history = useHistory();
 
-
   useEffect(() => {
     if (isLoggin) {
       axios
@@ -30,7 +29,6 @@ const Account = () => {
     axios.post(`${path}/delete`).then(res => {
       if (res.data === "OK") {
         setIsLoggin(false);
-        setUser({});
         history.push("/");
       }
     });
