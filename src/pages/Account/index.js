@@ -8,9 +8,8 @@ const Account = () => {
   const { isLoggin, setIsLoggin, path } = useContext(myContext);
   const history = useHistory();
 
-
   useEffect(() => {
-    console.log('test');
+    console.log("test");
     if (isLoggin) {
       axios
         .get(`${path}/account`)
@@ -25,13 +24,12 @@ const Account = () => {
           history.push("/");
         });
     }
-  }, [path,isLoggin,history]);
+  }, [path, isLoggin, history]);
 
   const handleDelete = () => {
     axios.post(`${path}/delete`).then(res => {
       if (res.data === "OK") {
         setIsLoggin(false);
-        setUser({});
         history.push("/");
       }
     });

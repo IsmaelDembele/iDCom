@@ -2,7 +2,6 @@ import React, { useState,useContext } from "react";
 
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import Snackbar from "@material-ui/core/Snackbar";
 
 import { Link, useHistory } from "react-router-dom";
 import { myContext } from "../../Helper/context";
@@ -10,7 +9,6 @@ import { myContext } from "../../Helper/context";
 import axios from "axios";
 
 import Logo from "../../assets/logo.jpg";
-import { Alert } from "../../Helper/function";
 import GoogleButton from "../../components/GoogleButton.js";
 
 // const passwordLength = 8;
@@ -22,7 +20,6 @@ const Register = () => {
   const [emailChecker, setEmailChecker] = useState(false);
   const [pwdChecker, setPwdChecker] = useState(false);
   const [pwdConfChecker, setPwdConfChecker] = useState(false);
-  const [snackbarState, setSnackbarState] = useState(false);
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -96,8 +93,9 @@ const Register = () => {
         console.log(response.data);
 
         if (response.data === "account created") {
-          //show confirmation message
-          setSnackbarState(true);
+          alert('Account created');
+          history.push("/sign");
+
         }
       })
       .catch(error => {
@@ -110,14 +108,6 @@ const Register = () => {
     setPwdConf("");
   };
 
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setSnackbarState(false);
-    // redirect to landing page
-    history.push("/");
-  };
 
   return (
     <div className="register">
@@ -170,12 +160,6 @@ const Register = () => {
             error={pwdConfChecker}
           />
           <p className="register__text-password">Passwords must be at least 8 characters.</p>
-
-          <Snackbar open={snackbarState} autoHideDuration={6000} onClose={handleClose}>
-            <Alert onClose={handleClose} severity="success">
-              Account created successfully!!
-            </Alert>
-          </Snackbar>
 
           <Button
             variant="contained"
