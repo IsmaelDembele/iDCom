@@ -31,7 +31,7 @@ const Header = () => {
         console.log(err);
         setIsLoggin(false);
       });
-    }, []);
+    }, [path,setIsLoggin]);
 
   const signOut = () => {
     axios

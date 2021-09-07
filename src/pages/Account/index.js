@@ -10,7 +10,6 @@ const Account = () => {
 
 
   useEffect(() => {
-    console.log('test');
     if (isLoggin) {
       axios
         .get(`${path}/account`)
@@ -25,7 +24,7 @@ const Account = () => {
           history.push("/");
         });
     }
-  }, [isLoggin,history]);
+  }, [isLoggin,history,path]);
 
   const handleDelete = () => {
     axios.post(`${path}/delete`).then(res => {

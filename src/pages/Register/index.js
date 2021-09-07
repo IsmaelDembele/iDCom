@@ -93,8 +93,6 @@ const Register = () => {
         password: pwd,
       })
       .then(response => {
-        console.log(response.data);
-
         if (response.data === "account created") {
           //show confirmation message
           setSnackbarState(true);

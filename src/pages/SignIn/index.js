@@ -63,7 +63,6 @@ const SignIn = () => {
         password: pwd,
       })
       .then(response => {
-        console.log(response);
         if (response.data === "OK" && response.status === 200) {
           console.log("connected successfully");
           setEmail("");
@@ -78,7 +77,6 @@ const SignIn = () => {
         console.log(error);
       });
 
-    console.log(email, pwd);
   };
 
   return (
