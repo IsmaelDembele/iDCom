@@ -9,7 +9,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import LandingPage from "../pages/LandingPage";
 import Header from "./Header/Header";
 import Footer from "./Footer";
-import {ProtectedRoute } from "../components/Protected";
+import { ProtectedRoute } from "../components/Protected";
 
 const Account = React.lazy(() => import("../pages/Account"));
 const Products = React.lazy(() => import("../pages/Products"));
