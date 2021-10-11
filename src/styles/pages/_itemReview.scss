@@ -16,15 +16,13 @@
     min-height: 4rem;
     border: 1px solid black;
     img {
-      max-height: 4rem;
-      max-width: 4rem;
+      @include max-height-width(4rem, 4rem);
     }
   }
 
   &__image {
     img {
-      max-height: 30rem;
-      max-width: 30rem;
+      @include max-height-width(30rem, 30rem);
     }
   }
 

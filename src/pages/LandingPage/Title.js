@@ -6,13 +6,14 @@ import elect from "../../assets/electronics/leon-seibert-LGZFr5bUw7M-unsplash.pn
 import home from "../../assets/homes/nathan-fertig-FBXuXp57eM0-unsplash1.jpg";
 import books from "../../assets/books/morgan-housel-aZ_MmSmAcjg-unsplash.jpg";
 import fashion from "../../assets/fashion/s-o-c-i-a-l-c-u-t-7QjF0V8NOms-unsplash.jpg";
+import { SLIDER } from "../../Helper/constants";
 
 const Title = props => {
   const [pause, setPause] = React.useState(false);
   const timer = React.useRef();
   const [sliderRef, slider] = useKeenSlider({
     loop: true,
-    duration: 3000,
+    duration: SLIDER.DURATION,
     dragStart: () => {
       setPause(true);
     },
@@ -35,7 +36,7 @@ const Title = props => {
       if (!pause && slider) {
         slider.next();
       }
-    }, 5000);
+    }, SLIDER.INTERVAL);
     return () => {
       clearInterval(timer.current);
     };

@@ -1,19 +1,19 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import GoogleLogin from "react-google-login";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { myContext } from "../../Helper/context";
+import { PATH_ENDPOINTS, RESULT } from "../../Helper/constants";
 
 const GoogleButton = () => {
   const history = useHistory();
   const { path } = useContext(myContext);
 
-
   const responseSuccessGoogle = response => {
     axios
-      .post(`${path}/googlelogin`, { tokenId: response.tokenId })
+      .post(`${path}/${PATH_ENDPOINTS.GOOGLE_LOGIN}`, { tokenId: response.tokenId })
       .then(result => {
-        if (result.data === "OK") {
+        if (result.data === RESULT.SUCCESS) {
           history.push("/");
         }
         console.log(result);
@@ -24,7 +24,7 @@ const GoogleButton = () => {
   };
 
   const responseFailureGoogle = response => {
-    console.log('error setting cookies',response);
+    console.log("error setting cookies", response);
     return;
   };
 

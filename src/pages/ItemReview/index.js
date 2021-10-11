@@ -22,8 +22,8 @@ const ItemReview = () => {
     localStorage.setItem("item", JSON.stringify(item));
     setDisplayImage(item.url);
     setIsActive(true);
-    // eslint-disable-next-line 
-  }, []);
+    // eslint-disable-next-line
+  }, [item.url]);
 
   const handleMousehover = (img, bool) => {
     setDisplayImage(img);

@@ -1,34 +1,13 @@
 .register {
-  background-image: linear-gradient(to bottom, $primary, $secondary);
-  min-height: 100vh;
-  height: 55rem;
-  display: flex;
-  flex-direction: column;
-  color: $text__color-contact;
-  font-family: $font__secondary;
-
-  justify-content: center;
-  align-items: center;
+  @include register-signin-top-styles;
 
   &__logo {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    width: 30rem;
-    height: 11.5rem;
-    align-self: center;
+    @include register-signin-logo;
   }
 
   &__container {
-    background-color: white;
-    width: 30rem;
     height: 47rem;
-
-    display: flex;
-    flex-direction: column;
-
-    padding: 1.5rem;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    @include register-signin-container;
   }
 
   &__form {
@@ -47,9 +26,7 @@
   }
 
   &__text {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 200;
+    @include register-signin-text;
   }
 
   &__name {
@@ -57,7 +34,6 @@
   &__email {
   }
   &__password {
-    width: 100%;
   }
 
   &__create-account,
@@ -65,28 +41,9 @@
     line-height: 1;
     margin-top: -1.5rem;
     font-size: 1rem;
-    top: 1px;
   }
 
   &__separator {
-    height: 5rem;
-    position: relative;
-
-    &__text {
-      position: relative;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 5;
-      background-color: white;
-      line-height: 1;
-      width: 3rem;
-      text-align: center;
-    }
-    &__line {
-      width: 100%;
-      position: absolute;
-      top: 50%;
-    }
+    @include register-signin-separator;
   }
 }

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useContext, useEffect } from "react";
 import { myContext } from "../../Helper/context";
 import { useHistory } from "react-router-dom";
+import { PATH_ENDPOINTS, RESULT } from "../../Helper/constants";
 
 const Account = () => {
   const [user, setUser] = useState({});
@@ -11,9 +12,9 @@ const Account = () => {
   useEffect(() => {
     if (isLoggin) {
       axios
-        .get(`${path}/account`)
+        .get(`${path}/${PATH_ENDPOINTS.ACCOUNT}`)
         .then(res => {
-          if (res.data.myStatus === "OK") {
+          if (res.data.myStatus === RESULT.SUCCESS) {
             const { userID, name, email } = res.data;
             setUser({ userID, name, email });
           }
@@ -23,11 +24,11 @@ const Account = () => {
           history.push("/");
         });
     }
-  }, [isLoggin,history,path]);
+  }, [isLoggin, history, path]);
 
   const handleDelete = () => {
-    axios.post(`${path}/delete`).then(res => {
-      if (res.data === "OK") {
+    axios.post(`${path}/${PATH_ENDPOINTS.DELETE}`).then(res => {
+      if (res.data === RESULT.SUCCESS) {
         setIsLoggin(false);
         history.push("/");
       }

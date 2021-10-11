@@ -8,3 +8,75 @@
   }
 }
 
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin align-justify-center {
+  align-items: center;
+  justify-items: center;
+}
+
+@mixin max-height-width($height, $witdh) {
+  max-height: $height;
+  max-width: $witdh;
+}
+
+@mixin register-signin-top-styles {
+  background-image: linear-gradient(to bottom, $primary, $secondary);
+  min-height: 100vh;
+  height: 55rem;
+  @include flex-center;
+  flex-direction: column;
+  color: $text__color-contact;
+  font-family: $font__secondary;
+}
+
+@mixin register-signin-logo {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  width: 30rem;
+  height: 11.5rem;
+  align-self: center;
+}
+
+@mixin register-signin-container {
+  background-color: white;
+  width: 30rem;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.5rem;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+@mixin register-signin-text {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+@mixin register-signin-separator {
+  height: 5rem;
+  position: relative;
+
+  &__text {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    background-color: white;
+    line-height: 1;
+    width: 3rem;
+    text-align: center;
+  }
+  &__line {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+  }
+}

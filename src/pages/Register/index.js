@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -10,10 +10,7 @@ import axios from "axios";
 
 import Logo from "../../assets/logo.jpg";
 import GoogleButton from "../../components/GoogleButton.js";
-
-const passwordLength = 8;
-// const passwordLength = 5;
-const nameLenght = 4;
+import { NAME_LENGTH, PASSWORD_LENGTH, PATH_ENDPOINTS, RESULT } from "../../Helper/constants";
 
 const Register = () => {
   const [fullnameChecker, setFullNameChecker] = useState(false);
@@ -27,12 +24,11 @@ const Register = () => {
   const [pwdConf, setPwdConf] = useState("");
   const { path } = useContext(myContext);
 
-
   const history = useHistory();
 
   const handleChangeFullName = e => {
     const value = e.target.value;
-    const test = value.length < nameLenght && value !== "";
+    const test = value.length < NAME_LENGTH && value !== "";
     setFullName(value);
     setFullNameChecker(test);
   };
@@ -44,7 +40,7 @@ const Register = () => {
   };
   const handleChangePwd = e => {
     const value = e.target.value;
-    const test = value.length >= passwordLength || value === "";
+    const test = value.length >= PASSWORD_LENGTH || value === "";
     setPwdChecker(!test);
     setPwd(value);
   };
@@ -58,7 +54,7 @@ const Register = () => {
   const handleCreateAccount = e => {
     e.preventDefault();
     let test = true;
-    if (fullName.length < nameLenght) {
+    if (fullName.length < NAME_LENGTH) {
       test = false;
       setFullNameChecker(true);
     }
@@ -68,7 +64,7 @@ const Register = () => {
       setEmailChecker(true);
     }
 
-    if (pwd.length < passwordLength) {
+    if (pwd.length < PASSWORD_LENGTH) {
       test = false;
       setPwdChecker(true);
     }
@@ -84,16 +80,15 @@ const Register = () => {
     }
     //axios are with crendential defined in App.js
     axios
-      .post(`${path}/register`, {
+      .post(`${path}/${PATH_ENDPOINTS.REGISTER}`, {
         fullname: fullName,
         email: email,
         password: pwd,
       })
       .then(response => {
-        if (response.data === "account created") {
-          alert('Account created');
-          history.push("/sign");
-
+        if (response.data === RESULT.ACCOUNT_CREATED) {
+          alert("Account created");
+          history.push(`/${PATH_ENDPOINTS.SIGN_IN}`);
         }
       })
       .catch(error => {
@@ -105,7 +100,6 @@ const Register = () => {
     setPwd("");
     setPwdConf("");
   };
-
 
   return (
     <div className="register">
