@@ -1,7 +1,5 @@
 #error-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   min-height: $min__body__height;
   font-size: 6rem;
 }

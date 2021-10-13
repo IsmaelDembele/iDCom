@@ -1,5 +1,6 @@
 import numeral from "numeral";
 import MuiAlert from "@material-ui/lab/Alert";
+import { PATH_ENDPOINTS } from "./constants";
 
 export const Alert = props => {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -24,9 +25,10 @@ export const addToCart = (item, myCart, setMyCart, history) => {
     find = true;
   }
 
-  find && history.push("/shopping");
+  find && history.push("/" + PATH_ENDPOINTS.SHOPPING);
 };
 
+//return the sume of the prices of the items in the shopping cart
 export const numeral_totalPrice = myArray => {
   let myTotal = 0;
   myArray.forEach(item => {
@@ -51,7 +53,7 @@ export const totalQuantity = myArray => {
   return total;
 };
 
-//Taken and id and return the position of the item it belongs to inside an array of item
+//Take and id and return the position of the item it belongs to inside an array of item
 export const myIndex = (id, myArray) => {
   let index;
   myArray.forEach((el, i) => {

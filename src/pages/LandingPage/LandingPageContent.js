@@ -4,15 +4,21 @@ import { myContext } from "../../Helper/context";
 
 import { v4 as uuidv4 } from "uuid";
 import { useHistory } from "react-router-dom";
+import { PATH_ENDPOINTS } from "../../Helper/constants";
 
 const Body = () => {
   const nbElement = 4; //we getting four items from each product category
   const { myData } = useContext(myContext);
   const history = useHistory();
-  const [listTitle] = useState(["electronics", "homes", "books", "fashion"]);
+  const [listTitle] = useState([
+    PATH_ENDPOINTS.ELECTRONICS,
+    PATH_ENDPOINTS.HOMES,
+    PATH_ENDPOINTS.BOOKS,
+    PATH_ENDPOINTS.FASHIONS,
+  ]);
 
   const handleClick = item => {
-    history.push({ pathname: `/itemReview/${item._id}`, item });
+    history.push({ pathname: `/${PATH_ENDPOINTS.ITEM_REVIEW}/${item._id}`, item });
   };
 
   return (
@@ -29,7 +35,7 @@ const Body = () => {
                   // we filter by title i.e this will return all the electronics product in the first occurance
                   return item.type === title;
                 })
-                .slice(0, nbElement)// => we take only the first four of the electronics content in the first occurance
+                .slice(0, nbElement) // => we take only the first four of the electronics content in the first occurance
                 .map(item => {
                   return (
                     <div

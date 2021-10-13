@@ -10,9 +10,7 @@ import axios from "axios";
 
 import Logo from "../../assets/logo.jpg";
 import GoogleButton from "../../components/GoogleButton.js";
-
-const passwordLength = 8;
-// const passwordLength = 5;
+import { PASSWORD_LENGTH, PATH_ENDPOINTS, RESULT } from "../../Helper/constants";
 
 const SignIn = () => {
   const [emailChecker, setEmailChecker] = useState(false);
@@ -31,7 +29,7 @@ const SignIn = () => {
   };
   const handleChangePwd = e => {
     const value = e.target.value;
-    const test = value.length >= passwordLength || value === "";
+    const test = value.length >= PASSWORD_LENGTH || value === "";
     setPwdChecker(!test);
     setPwd(value);
   };
@@ -47,7 +45,7 @@ const SignIn = () => {
       setEmailChecker(true);
     }
 
-    if (pwd.length < passwordLength) {
+    if (pwd.length < PASSWORD_LENGTH) {
       test = false;
       setPwdChecker(true);
     }
@@ -58,13 +56,12 @@ const SignIn = () => {
     }
     // axios send with credentials;
     axios
-      .post(`${path}/sign`, {
+      .post(`${path}/${PATH_ENDPOINTS.SIGN_IN}`, {
         email: email,
         password: pwd,
       })
       .then(response => {
-        if (response.data === "OK" && response.status === 200) {
-          console.log("connected successfully");
+        if (response.data === RESULT.SUCCESS && response.status === 200) {
           setEmail("");
           setPwd("");
           history.push("/");
@@ -76,7 +73,6 @@ const SignIn = () => {
       .catch(error => {
         console.log(error);
       });
-
   };
 
   return (

@@ -4,7 +4,6 @@
 
   .title {
     background-image: linear-gradient(to right, #fff, $secondary, $primary);
-    // width: 100vh;
     .keen-slider__slide {
       overflow: hidden;
       color: $text__color;
@@ -17,8 +16,7 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
 
-      align-items: center;
-      justify-items: center;
+      @include align-justify-center;
     }
     &__brand {
       grid-row: 1 / span 1;

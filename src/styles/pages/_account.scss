@@ -1,8 +1,6 @@
 .account {
   min-height: $min__body__height;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   background-image: linear-gradient(to bottom, #fff, $secondary, $primary);
 
   &__text {

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
 import { myContext } from "../../Helper/context";
+import { PATH_ENDPOINTS } from "../../Helper/constants";
 
 const SearchInput = () => {
   const history = useHistory();
@@ -13,7 +14,7 @@ const SearchInput = () => {
     e.preventDefault();
     searchItem !== "" &&
       searchData.length > 0 &&
-      history.push({ pathname: `/search/${searchItem}`, searchData });
+      history.push({ pathname: `/${PATH_ENDPOINTS.SEARCH}/${searchItem}`, searchData });
     clearSearchData();
   };
 
@@ -38,7 +39,7 @@ const SearchInput = () => {
   };
 
   const handleClick = (id, item) => {
-    history.push({ pathname: `/itemReview/${id}`, item });
+    history.push({ pathname: `/${PATH_ENDPOINTS.ITEM_REVIEW}/${id}`, item });
     clearSearchData();
   };
 

@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-You will need a google client ID in order to use Google Oauth 2.0
+You will need a google client ID in order to use Google Oauth 2.0.
 
 
 

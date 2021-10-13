@@ -10,6 +10,7 @@ import LandingPage from "../pages/LandingPage";
 import Header from "./Header/Header";
 import Footer from "./Footer";
 import { ProtectedRoute } from "../components/Protected";
+import { PATH_ENDPOINTS } from "../Helper/constants";
 
 const Account = React.lazy(() => import("../pages/Account"));
 const Products = React.lazy(() => import("../pages/Products"));
@@ -28,7 +29,7 @@ const App = () => {
   const [myCart, setMyCart] = useState([]);
   const [myData, setMyData] = useState([]);
   const [isLoggin, setIsLoggin] = useState(false);
-  const { loading, products } = useFetch(`${path}/products`);
+  const { loading, products } = useFetch(`${path}/${PATH_ENDPOINTS.PRODUCTS}`);
 
   useEffect(() => {
     setMyData(products);
@@ -55,8 +56,8 @@ const App = () => {
               //the header is not display on the sign and register page
               path="*"
               render={props =>
-                props.location.pathname !== "/sign" &&
-                props.location.pathname !== "/register" && <Header />
+                props.location.pathname !== `/${PATH_ENDPOINTS.SIGN_IN}` &&
+                props.location.pathname !== `/${PATH_ENDPOINTS.REGISTER}` && <Header />
               }
             />
             {loading && <CircularProgress className="circular-progress" />}
@@ -64,24 +65,24 @@ const App = () => {
               <Route exact path="/">
                 <LandingPage />
               </Route>
-              <Route exact path="/shopping">
+              <Route exact path={`/${PATH_ENDPOINTS.SHOPPING}`}>
                 <ShoppingCart />
               </Route>
-              <Route exact path="/sign">
+              <Route exact path={`/${PATH_ENDPOINTS.SIGN_IN}`}>
                 <SignIn />
               </Route>
-              <Route exact path="/register">
+              <Route exact path={`/${PATH_ENDPOINTS.REGISTER}`}>
                 <Register />
               </Route>
-              <ProtectedRoute exact path="/account" component={Account} />
+              <ProtectedRoute exact path={`/${PATH_ENDPOINTS.ACCOUNT}`} component={Account} />
 
-              <Route exact path="/search/:id">
+              <Route exact path={`/${PATH_ENDPOINTS.SEARCH}/:id`}>
                 <SearchPage />
               </Route>
-              <Route exact path="/products/:id">
+              <Route exact path={`/${PATH_ENDPOINTS.PRODUCTS}/:id`}>
                 <Products />
               </Route>
-              <Route exact path="/itemreview/:id">
+              <Route exact path={`/${PATH_ENDPOINTS.ITEM_REVIEW}/:id`}>
                 <ItemReview />
               </Route>
 
@@ -93,8 +94,8 @@ const App = () => {
             <Route
               path="*"
               render={props =>
-                props.location.pathname !== "/sign" &&
-                props.location.pathname !== "/register" && <Footer />
+                props.location.pathname !== `/${PATH_ENDPOINTS.SIGN_IN}` &&
+                props.location.pathname !== `/${PATH_ENDPOINTS.REGISTER}` && <Footer />
               }
             />
           </Router>

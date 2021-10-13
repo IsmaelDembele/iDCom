@@ -1,10 +1,10 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 
 import { addToCart } from "../../Helper/function";
 import { myContext } from "../../Helper/context";
-
+import { PATH_ENDPOINTS } from "../../Helper/constants";
 
 const Item = props => {
   const { _id, url, name, price } = props.item;
@@ -12,7 +12,7 @@ const Item = props => {
   const { myCart, setMyCart } = useContext(myContext);
 
   const handleClick = item => {
-    history.push({ pathname: `/itemReview/${_id}`, item });
+    history.push({ pathname: `/${PATH_ENDPOINTS.ITEM_REVIEW}/${_id}`, item });
   };
 
   return (

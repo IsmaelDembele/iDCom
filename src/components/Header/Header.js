@@ -10,6 +10,7 @@ import Logo from "../../assets/logo.jpg";
 import { myContext } from "../../Helper/context";
 import { totalQuantity } from "../../Helper/function";
 import axios from "axios";
+import { PATH_ENDPOINTS, RESULT } from "../../Helper/constants";
 
 const Header = () => {
   const [cartItemNumber, setCartItemNumer] = useState(0);
@@ -22,9 +23,8 @@ const Header = () => {
   }, [myCart]);
 
   useEffect(() => {
-    console.log('test');
     axios
-      .get(`${path}/sign`)
+      .get(`${path}/${PATH_ENDPOINTS.SIGN_IN}`)
       .then(res => {
         setIsLoggin(res.data === true);
       })
@@ -32,13 +32,13 @@ const Header = () => {
         console.log(err);
         setIsLoggin(false);
       });
-    }, [path,setIsLoggin]);
+  }, [path, setIsLoggin]);
 
   const signOut = () => {
     axios
-      .post(`${path}/sign-out`)
+      .post(`${path}/${PATH_ENDPOINTS.SIGN_OUT}`)
       .then(res => {
-        if (res.data === "OK" && res.status === 200) {
+        if (res.data === RESULT.SUCCESS && res.status === 200) {
           setIsLoggin(false);
           history.push("/");
           console.log("user logged out");
@@ -59,18 +59,18 @@ const Header = () => {
         <SearchInput />
 
         {!isLoggin && (
-          <Link to="/sign">
+          <Link to={`/${PATH_ENDPOINTS.SIGN_IN}`}>
             <div className="navbar__sign-in">sign in</div>
           </Link>
         )}
 
         {!isLoggin && (
-          <Link to="/register">
+          <Link to={`/${PATH_ENDPOINTS.REGISTER}`}>
             <div className="navbar__register">register</div>
           </Link>
         )}
         {isLoggin && (
-          <Link to="/account">
+          <Link to={`/${PATH_ENDPOINTS.ACCOUNT}`}>
             <div className="navbar__my-account">My Account</div>
           </Link>
         )}
@@ -82,7 +82,7 @@ const Header = () => {
         )}
 
         <div className="cart">
-          <Link to="/shopping">
+          <Link to={`/${PATH_ENDPOINTS.SHOPPING}`}>
             <Badge badgeContent={cartItemNumber} color="primary">
               <ShoppingCartIcon fontSize="large" />
             </Badge>
@@ -96,17 +96,17 @@ const Header = () => {
             <HomeIcon fontSize="large" />
           </div>
         </Link>
-        <Link to="/products/electronics">
+        <Link to={`/${PATH_ENDPOINTS.PRODUCTS}/${PATH_ENDPOINTS.ELECTRONICS}`}>
           <div className="products__item">Electronics</div>
         </Link>
-        <Link to="/products/homes">
+        <Link to={`/${PATH_ENDPOINTS.PRODUCTS}/${PATH_ENDPOINTS.HOMES}`}>
           <div className="products__item">Homes</div>
         </Link>
-        <Link to="/products/books">
+        <Link to={`/${PATH_ENDPOINTS.PRODUCTS}/${PATH_ENDPOINTS.BOOKS}`}>
           <div className="products__item">Books</div>
         </Link>
-        <Link to="/products/fashion">
-          <div className="products__item">Fashion</div>
+        <Link to={`/${PATH_ENDPOINTS.PRODUCTS}/${PATH_ENDPOINTS.FASHIONS}`}>
+          <div className="products__item">Fashions</div>
         </Link>
       </div>
     </header>
