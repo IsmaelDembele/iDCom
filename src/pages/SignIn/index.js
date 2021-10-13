@@ -72,6 +72,7 @@ const SignIn = () => {
       })
       .catch(error => {
         console.log(error);
+        alert("Something went wrong, please try again later.");
       });
   };
 
