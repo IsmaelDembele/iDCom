@@ -23,6 +23,7 @@ const Header = () => {
   }, [myCart]);
 
   useEffect(() => {
+    //get the connection status from the server
     axios
       .get(`${path}/${PATH_ENDPOINTS.SIGN_IN}`)
       .then(res => {
