@@ -15,7 +15,6 @@ const GoogleButton = () => {
       .then(result => {
         if (result.data === RESULT.SUCCESS) {
           history.push("/");
-          console.log("logged in through google");
         }
       })
       .catch(err => {
