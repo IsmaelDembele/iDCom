@@ -22,8 +22,7 @@ const Register = React.lazy(() => import("../pages/Register"));
 
 axios.defaults.withCredentials = true;
 
-const path = "https://idcom-server.herokuapp.com";
-// const path = "http://localhost:5000";
+const path = process.env.REACT_APP_PATH;
 
 const App = () => {
   const [myCart, setMyCart] = useState([]);
