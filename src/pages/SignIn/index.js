@@ -16,8 +16,8 @@ import { PASSWORD_LENGTH, PATH_ENDPOINTS, RESULT } from "../../Helper/constants"
 const SignIn = () => {
   const [emailChecker, setEmailChecker] = useState(false);
   const [pwdChecker, setPwdChecker] = useState(false);
-  const [email, setEmail] = useState("dembele@gmail.com");
-  const [pwd, setPwd] = useState("12345678");
+  const [email, setEmail] = useState("");
+  const [pwd, setPwd] = useState("");
   const history = useHistory();
   const [errorMsg, setErrorMsg] = useState(false);
   const { path} = useContext(myContext);

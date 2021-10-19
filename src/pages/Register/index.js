@@ -18,10 +18,10 @@ const Register = () => {
   const [pwdChecker, setPwdChecker] = useState(false);
   const [pwdConfChecker, setPwdConfChecker] = useState(false);
 
-  const [fullName, setFullName] = useState("hi hi");
-  const [email, setEmail] = useState("hi@hi.com");
-  const [pwd, setPwd] = useState("12345678");
-  const [pwdConf, setPwdConf] = useState("12345678");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [pwd, setPwd] = useState("");
+  const [pwdConf, setPwdConf] = useState("");
   const { path } = useContext(myContext);
 
   const history = useHistory();
@@ -78,7 +78,7 @@ const Register = () => {
       console.log(`error ${test}`);
       return;
     }
-    //axios are with crendential defined in App.js
+
     axios
       .post(`${path}/${PATH_ENDPOINTS.REGISTER}`, {
         fullname: fullName,
