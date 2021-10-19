@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { myContext } from "../Helper/context";
 import { useFetch } from "../Helper/useFetch";
+import { PATH_ENDPOINTS } from "../Helper/constants";
+import { getCsrfToken } from "../Helper/function";
 import axios from "axios";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -10,7 +12,6 @@ import LandingPage from "../pages/LandingPage";
 import Header from "./Header/Header";
 import Footer from "./Footer";
 import { ProtectedRoute } from "../components/Protected";
-import { PATH_ENDPOINTS } from "../Helper/constants";
 
 const Account = React.lazy(() => import("../pages/Account"));
 const Products = React.lazy(() => import("../pages/Products"));
@@ -31,14 +32,18 @@ const App = () => {
   const { loading, products } = useFetch(`${path}/${PATH_ENDPOINTS.PRODUCTS}`);
 
   useEffect(() => {
-    setMyData(products);
-  }, [products]);
+    //=>getting the csrf token
+    getCsrfToken(path).then(res => {
+      axios.defaults.headers.common["X-CSRF-TOKEN"] = res.data;
+    });
+  }, [isLoggin]);
 
   useEffect(() => {
+    setMyData(products);
     //=> So that the number of item inside the shopping cart appers everywhere
     const cart = JSON.parse(localStorage.getItem("myCart"));
     cart && setMyCart(cart);
-  }, []);
+  }, [products]);
 
   return (
     <myContext.Provider value={{ myCart, setMyCart, myData, isLoggin, setIsLoggin, path }}>

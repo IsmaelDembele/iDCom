@@ -13,6 +13,7 @@ export const PATH_ENDPOINTS = {
   SEARCH: "search",
   ITEM_REVIEW: "itemReview",
   DELETE: "delete",
+  CSRF: "csrf",
 };
 
 export const RESULT = {

@@ -7,6 +7,7 @@ import { Link, useHistory } from "react-router-dom";
 import { myContext } from "../../Helper/context";
 
 import axios from "axios";
+// import http from "http";
 
 import Logo from "../../assets/logo.jpg";
 import GoogleButton from "../../components/GoogleButton.js";
@@ -15,11 +16,11 @@ import { PASSWORD_LENGTH, PATH_ENDPOINTS, RESULT } from "../../Helper/constants"
 const SignIn = () => {
   const [emailChecker, setEmailChecker] = useState(false);
   const [pwdChecker, setPwdChecker] = useState(false);
-  const [email, setEmail] = useState("");
-  const [pwd, setPwd] = useState("");
+  const [email, setEmail] = useState("dembele@gmail.com");
+  const [pwd, setPwd] = useState("12345678");
   const history = useHistory();
   const [errorMsg, setErrorMsg] = useState(false);
-  const { path } = useContext(myContext);
+  const { path} = useContext(myContext);
 
   const handleChangeEmail = e => {
     const value = e.target.value;
@@ -34,7 +35,7 @@ const SignIn = () => {
     setPwd(value);
   };
 
-  const handleClick = e => {
+  const handleClick = async e => {
     e.preventDefault();
     errorMsg && setErrorMsg(false);
 
@@ -54,7 +55,7 @@ const SignIn = () => {
       console.log(`error ${test}`);
       return;
     }
-    // axios send with credentials;
+     
     axios
       .post(`${path}/${PATH_ENDPOINTS.SIGN_IN}`, {
         email: email,

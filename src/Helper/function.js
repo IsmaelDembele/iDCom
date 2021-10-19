@@ -1,6 +1,10 @@
 import numeral from "numeral";
 import MuiAlert from "@material-ui/lab/Alert";
 import { PATH_ENDPOINTS } from "./constants";
+import axios from "axios";
+
+let https;
+process.env.NODE_ENV === "production" ? (https = require("https")) : (https = require("http"));
 
 export const Alert = props => {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -61,4 +65,18 @@ export const myIndex = (id, myArray) => {
   });
 
   return index;
+};
+
+export const getCsrfToken = async path => {
+  //this function will get the csrf token from the back-end
+  const instance = axios.create({
+    withCredentials: true,
+    httpAgent: new https.Agent({
+      rejectUnauthorized: false,
+      requestCert: true,
+      keepAlive: true,
+    }),
+  });
+  const csrfToken = await instance.get(`${path}/${PATH_ENDPOINTS.CSRF}`);
+  return csrfToken;
 };

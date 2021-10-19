@@ -27,7 +27,7 @@ const Header = () => {
     axios
       .get(`${path}/${PATH_ENDPOINTS.SIGN_IN}`)
       .then(res => {
-        setIsLoggin(res.data === true);
+        setIsLoggin(res.data === RESULT.SUCCESS);
       })
       .catch(err => {
         console.log(err);
@@ -42,7 +42,6 @@ const Header = () => {
         if (res.data === RESULT.SUCCESS && res.status === 200) {
           setIsLoggin(false);
           history.push("/");
-          console.log("user logged out");
         }
       })
       .catch(err => {
