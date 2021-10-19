@@ -2,7 +2,10 @@
 
 You will need a google client ID in order to use Google Oauth 2.0.
 
+# Missing environment variables
 
+REACT_APP_GOOGLE_CLIENT_ID
+REACT_APP_PATH
 
 ## Available Scripts
 
