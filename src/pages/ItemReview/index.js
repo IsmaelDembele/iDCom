@@ -5,6 +5,8 @@ import { Button } from "@material-ui/core";
 import { myContext } from "../../Helper/context";
 import { addToCart } from "../../Helper/function";
 
+import ImageMagnifier from "./ImageMagnigier";
+
 const ItemReview = () => {
   const location = useLocation();
   /**
@@ -51,8 +53,14 @@ const ItemReview = () => {
         )}
       </div>
       <div className="itemReview__image">
-        <img src={displayImage} alt={`thumbnail ${item?.name}`} />
+        {/* <img src={displayImage} alt={`thumbnail ${item?.name}`} /> */}
+
+        <ImageMagnifier
+          width={"200px"}
+          src={displayImage}
+        />
       </div>
+
       <div className="itemReview__specification">{item.description}</div>
       <div className="itemReview__buy">
         <div className="itemReview__price">{item.price}</div>
