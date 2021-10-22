@@ -11,6 +11,32 @@ REACT_APP_PATH
 
 In the project directory, you can run:
 
+# implemented functions
+
+Register an account
+
+Authentication with google auth 2.0
+
+Authentication with email and password
+
+CSRF attacks protections
+
+Item review page with more information on the item
+
+# To-do
+
+in the future, plan to add:
+
+    save shopping cart's items to user's data in the back-end
+
+    add Admin account
+
+    email notification
+
+    reset passport with email
+
+    payment with stripe
+
 ### `npm start`
 
 Runs the app in the development mode.\
