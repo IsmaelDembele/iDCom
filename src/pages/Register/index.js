@@ -92,6 +92,7 @@ const Register = () => {
         }
       })
       .catch(error => {
+        alert("something happen " + error);
         console.log(`error while fetching data ${error}`);
       });
 
