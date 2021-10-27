@@ -21,6 +21,7 @@ const ItemReview = () => {
   const activeColor = "#0984e3";
 
   useEffect(() => {
+    console.log(location);
     localStorage.setItem("item", JSON.stringify(item));
     setDisplayImage(item.url);
     setIsActive(true);

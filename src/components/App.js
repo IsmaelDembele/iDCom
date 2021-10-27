@@ -18,6 +18,7 @@ const Products = React.lazy(() => import("../pages/Products"));
 const SearchPage = React.lazy(() => import("../pages/SearchPage"));
 const ItemReview = React.lazy(() => import("../pages/ItemReview"));
 const ShoppingCart = React.lazy(() => import("../pages/ShoppingCart"));
+const VerifyEmail = React.lazy(() => import("../pages/VerifyEmail"));
 const SignIn = React.lazy(() => import("../pages/SignIn"));
 const Register = React.lazy(() => import("../pages/Register"));
 
@@ -33,9 +34,13 @@ const App = () => {
 
   useEffect(() => {
     //=>getting the csrf token
-    getCsrfToken(path).then(res => {
-      axios.defaults.headers.common["X-CSRF-TOKEN"] = res.data;
-    });
+    getCsrfToken(path)
+      .then(res => {
+        axios.defaults.headers.common["X-CSRF-TOKEN"] = res.data;
+      })
+      .catch(err => {
+        console.log("Can't get the csrf token", err);
+      });
   }, [isLoggin]);
 
   useEffect(() => {
@@ -88,6 +93,9 @@ const App = () => {
               </Route>
               <Route exact path={`/${PATH_ENDPOINTS.ITEM_REVIEW}/:id`}>
                 <ItemReview />
+              </Route>
+              <Route exact path={`/${PATH_ENDPOINTS.VERIFY_EMAIL}/:id`}>
+                <VerifyEmail />
               </Route>
 
               <Route exact path="*">

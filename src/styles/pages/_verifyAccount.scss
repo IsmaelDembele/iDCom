@@ -1,0 +1,23 @@
+.verifyAccount {
+  min-height: $min__body__height;
+  @include flex-center;
+  background-image: linear-gradient(to bottom, #fff, $secondary, $primary);
+
+  &__box {
+    background-color: white;
+    padding-top: 7rem;
+    width: 80%;
+    height: 20rem;
+    color: $text__color;
+    font-size: 2rem;
+    // text-align: center;
+    border-radius: 3px;
+    box-shadow: $shadow;
+  }
+
+  &__text {
+    margin: 0 auto 0 auto;
+    width: 50rem;
+    // background-color: yellowgreen;
+  }
+}

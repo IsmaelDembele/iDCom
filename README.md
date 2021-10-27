@@ -23,6 +23,8 @@ CSRF attacks protections
 
 Item review page with more information on the item
 
+email notification
+
 # To-do
 
 in the future, plan to add:
@@ -30,8 +32,6 @@ in the future, plan to add:
     save shopping cart's items to user's data in the back-end
 
     add Admin account
-
-    email notification
 
     reset passport with email
 

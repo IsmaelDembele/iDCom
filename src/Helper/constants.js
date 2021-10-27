@@ -14,11 +14,20 @@ export const PATH_ENDPOINTS = {
   ITEM_REVIEW: "itemReview",
   DELETE: "delete",
   CSRF: "csrf",
+  VERIFY_EMAIL: "verifyemail",
 };
 
 export const RESULT = {
   SUCCESS: "OK",
   ACCOUNT_CREATED: "account created",
+  EXPIRED_TOKEN: "token expired",
+};
+
+export const TOKEN_STATUS = {
+  VERIFIED: 'verified',
+  EXPIRED: "expired",
+  LOADING: "loading",
+  ERROR: "error",
 };
 
 export const SLIDER = {
