@@ -39,7 +39,7 @@ const Index = () => {
       .catch(error => {
         console.log("Could not send the token to the server:", error);
       });
-  }, []);
+  }, [id, path]);
 
   return (
     <div className="verifyAccount">
