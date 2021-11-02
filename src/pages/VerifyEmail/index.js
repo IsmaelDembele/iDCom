@@ -41,6 +41,13 @@ const Index = () => {
       });
   }, [id, path]);
 
+  useEffect(() => {
+    //this will make sure the crsfToken is refresh
+    if (verified === TOKEN_STATUS.EXPIRED) {
+      window.location.reload();
+    }
+  }, [verified]);
+
   return (
     <div className="verifyAccount">
       <div className="verifyAccount__box">

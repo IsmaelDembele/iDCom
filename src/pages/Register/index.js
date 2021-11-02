@@ -87,12 +87,15 @@ const Register = () => {
       })
       .then(response => {
         if (response.data === RESULT.ACCOUNT_CREATED) {
-          alert("Account created");
+          alert("Account created! Please check your email to verify your account.");
           history.push(`/${PATH_ENDPOINTS.SIGN_IN}`);
+        }
+        if (response.data === RESULT.EMAIL_EXIST) {
+          alert("This email already exist, please check your email and try again later");
         }
       })
       .catch(error => {
-        alert("something happen " + error);
+        alert("An error occured. Please try again later.");
         console.log(`error while fetching data ${error}`);
       });
 

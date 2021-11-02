@@ -7,7 +7,6 @@ import { Link, useHistory } from "react-router-dom";
 import { myContext } from "../../Helper/context";
 
 import axios from "axios";
-// import http from "http";
 
 import Logo from "../../assets/logo.jpg";
 import GoogleButton from "../../components/GoogleButton.js";
@@ -20,7 +19,7 @@ const SignIn = () => {
   const [pwd, setPwd] = useState("");
   const history = useHistory();
   const [errorMsg, setErrorMsg] = useState(false);
-  const { path} = useContext(myContext);
+  const { path } = useContext(myContext);
 
   const handleChangeEmail = e => {
     const value = e.target.value;
@@ -55,7 +54,7 @@ const SignIn = () => {
       console.log(`error ${test}`);
       return;
     }
-     
+
     axios
       .post(`${path}/${PATH_ENDPOINTS.SIGN_IN}`, {
         email: email,
@@ -63,18 +62,24 @@ const SignIn = () => {
       })
       .then(response => {
         if (response.data === RESULT.SUCCESS && response.status === 200) {
-          setEmail("");
-          setPwd("");
           history.push("/");
+        } else if (response.data === RESULT.VERIFY_EMAIL) {
+          alert(
+            "Your account has not been verified yet. Please check your email for a verifycation link"
+          );
         } else {
           setErrorMsg(true);
-          return;
         }
       })
       .catch(error => {
         console.log(error);
         alert("Something went wrong, please try again later.");
       });
+
+    if (errorMsg) {
+      setEmail("");
+      setPwd("");
+    }
   };
 
   return (
@@ -105,7 +110,10 @@ const SignIn = () => {
             value={pwd}
             error={pwdChecker}
           />
-          <p className="sign-in__text-password">Forgot your password</p>
+          <Link to={`/${PATH_ENDPOINTS.PASSWORD_RESET}/${PATH_ENDPOINTS.REQUEST_TOKEN}`}>
+            <p className="sign-in__text-password">Forgot your password</p>
+          </Link>
+
           {errorMsg && <p className="sign-in__error-msg">Invalid user/password</p>}
           <Button
             variant="contained"

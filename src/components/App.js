@@ -21,6 +21,7 @@ const ShoppingCart = React.lazy(() => import("../pages/ShoppingCart"));
 const VerifyEmail = React.lazy(() => import("../pages/VerifyEmail"));
 const SignIn = React.lazy(() => import("../pages/SignIn"));
 const Register = React.lazy(() => import("../pages/Register"));
+const PasswordReset = React.lazy(() => import("../pages/PasswortReset"));
 
 axios.defaults.withCredentials = true;
 
@@ -96,6 +97,9 @@ const App = () => {
               </Route>
               <Route exact path={`/${PATH_ENDPOINTS.VERIFY_EMAIL}/:id`}>
                 <VerifyEmail />
+              </Route>
+              <Route exact path={`/${PATH_ENDPOINTS.PASSWORD_RESET}/:id`}>
+                <PasswordReset />
               </Route>
 
               <Route exact path="*">

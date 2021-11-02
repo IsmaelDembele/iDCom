@@ -1,14 +1,14 @@
 import numeral from "numeral";
-import MuiAlert from "@material-ui/lab/Alert";
+// import MuiAlert from "@material-ui/lab/Alert";
 import { PATH_ENDPOINTS } from "./constants";
 import axios from "axios";
 
 let https;
 process.env.NODE_ENV === "production" ? (https = require("https")) : (https = require("http"));
 
-export const Alert = props => {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-};
+// export const Alert = props => {
+//   return <MuiAlert elevation={6} variant="filled" {...props} />;
+// };
 
 export const addToCart = (item, myCart, setMyCart, history) => {
   let find = false;
@@ -18,7 +18,12 @@ export const addToCart = (item, myCart, setMyCart, history) => {
   for (const el of myCart) {
     if (el._id === item._id) {
       find = true;
-      el.qty++;
+      //We cannot buy more than nine times the same item
+      if (+el.qty === 9) {
+        alert("Maximun quantity reached for this item");
+      } else {
+        el.qty++;
+      }
       break;
     }
   }

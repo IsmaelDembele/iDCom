@@ -15,16 +15,21 @@ export const PATH_ENDPOINTS = {
   DELETE: "delete",
   CSRF: "csrf",
   VERIFY_EMAIL: "verifyemail",
+  PASSWORD_RESET: "passwordreset",
+  REQUEST_TOKEN: "requestToken",
+  CHANGE_PASSWORD: "changePassword",
 };
 
 export const RESULT = {
   SUCCESS: "OK",
   ACCOUNT_CREATED: "account created",
   EXPIRED_TOKEN: "token expired",
+  VERIFY_EMAIL: "verify email",
+  EMAIL_EXIST: "email exist",
 };
 
 export const TOKEN_STATUS = {
-  VERIFIED: 'verified',
+  VERIFIED: "verified",
   EXPIRED: "expired",
   LOADING: "loading",
   ERROR: "error",
